@@ -1,6 +1,5 @@
 import React from 'react';
-import { View,StyleSheet,Image, ImageBackground } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity, View,StyleSheet,Image, ImageBackground } from 'react-native';
 
 const OnboardingScreen = props => {
     return  <View style={styles.screen} >
