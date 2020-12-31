@@ -4,12 +4,16 @@ import { View ,Text ,StyleSheet,Image } from 'react-native';
 const SplashScreen = props => {
     return  <View style={styles.screen} >
         <View style={styles.centered}>
-            <View style={styles.firstBlock} >
+            <View style={styles.firstBlock} >               
                 <Image style={styles.logo} source={require('../assets/images/Group.png')} />
             </View>
             <View style={styles.secondBlock} >
-                <View><Image style={styles.title} source={require('../assets/images/title.png')} /></View>
-                <View style={{alignItems : 'center'}} ><Text style={styles.smallText} >online groceries</Text></View>
+                <View>
+                    <Image style={styles.title} source={require('../assets/images/title.png')} />
+                </View>
+                <View style={{alignItems : 'center'}}>
+                <Image style={styles.smallText} source={require('../assets/images/onlinegrocery.png')} />
+                </View>
             </View>
         </View>
     </View> ;
@@ -31,32 +35,27 @@ const styles = StyleSheet.create({
         height : '15%',
         flexDirection : 'row',
         justifyContent : 'space-between'
-
     },
     firstBlock : {
-        height : '90%',
         width : '15%',
-
+        marginBottom : 15
     },
     secondBlock : {
         width : '75%'
     },
     title : {
-        height : '72%',
+        height : '70%',
         width : '100%'
     },    
     smallText:{
-        fontSize : 14,
-    
-        color:'#FFFFFF'
+        height : '30%',
+        width : '100%'
     },
-     
     logo : {
-        marginTop : 10,
+        marginTop :5,
         height : 64,
         width : 54
     }
-
 });
 
 export default SplashScreen;
