@@ -4,8 +4,8 @@ import SplashScreen from '../screens/SplashScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import SignInScreen from "../screens/SignInScreen";
 const groceryNavigator = createStackNavigator({
-    Splash : SplashScreen
-    //Onboarding : OnboardingScreen
+    //Splash : SplashScreen
+    Onboarding : OnboardingScreen
     //Signin : SignInScreen
 });
 
