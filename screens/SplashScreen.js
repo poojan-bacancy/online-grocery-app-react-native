@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,StyleSheet,Image } from 'react-native';
+import { View,StyleSheet,Image,Text } from 'react-native';
 
 const SplashScreen = props => {
     return  <View style={styles.screen} >
@@ -8,11 +8,11 @@ const SplashScreen = props => {
                 <Image style={styles.logo} source={require('../assets/images/Group.png')} />
             </View>
             <View style={styles.secondBlock} >
-                <View>
+                <View style={styles.titleBlock}>
                     <Image style={styles.title} source={require('../assets/images/title.png')} />
                 </View>
-                <View style={{alignItems : 'center'}}>
-                <Image style={styles.smallText} source={require('../assets/images/onlinegrocery.png')} />
+                <View style={styles.smallTextBlock}>
+                <Text style={styles.smallText}>online groceriet</Text>
                 </View>
             </View>
         </View>
@@ -38,18 +38,36 @@ const styles = StyleSheet.create({
     },
     firstBlock : {
         width : '15%',
-        marginBottom : 15
+        marginBottom : 15,
+        
+        marginLeft : 5
     },
     secondBlock : {
-        width : '75%'
+        width : '75%',
+        marginRight : 5,
+        
+    },
+    titleBlock : {
+        height : '50%'
     },
     title : {
-        height : '70%',
-        width : '100%'
+        height : '100%',
+        width : '100%',
+        
     },    
-    smallText:{
-        height : '30%',
-        width : '100%'
+    smallTextBlock:{
+        height : '25%',
+        width : '100%',
+        marginTop : 5,
+        alignItems : 'center',
+        
+    },
+    smallText  :{
+        fontSize : 15,
+        fontFamily : 'Gilroy-Medium',
+        color : '#FFFFFF',
+        letterSpacing : 5.5,
+        lineHeight : 18
     },
     logo : {
         marginTop :5,
