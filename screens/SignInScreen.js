@@ -1,9 +1,11 @@
 import React from 'react';
-import { TextInput, TouchableOpacity,View,StyleSheet,Image,Text} from 'react-native';
+import { TextInput,TouchableOpacity,View,StyleSheet,Image,Text} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Flag from 'react-native-flags';
 
 const SignInScreen = props => {
-    return  <View style={styles.screen} >
+    return  (
+    <View style={styles.screen} >
             <View style={styles.imageBlock}>
                 <Image style={styles.image} source={require('../assets/images/groceryImage.png')} />
             </View>
@@ -11,25 +13,34 @@ const SignInScreen = props => {
                 <Text style={{fontSize : 28}} >
                     Get your groceries with nectar
                 </Text>
-        </View>
-        <View style={styles.inputBlock}>
-            <TextInput style={styles.input} />
+            </View>
+            <View style={styles.inputBlock}>
+            <Flag
+                code="IN"
+                size={32}
+            />
+            <View style={{marginLeft : 10}} ><Text>+91</Text></View>
+            <View style={styles.input}><TextInput keyboardType={'number-pad'} onFocus={() => {
+                props.navigation.navigate('Number')
+            }} /></View>
         </View>
         <View style={styles.smallTextblock}>
             <Text>
                 Or connect with social media
             </Text>
         </View>
-        <TouchableOpacity style={styles.buttonGoogle} >
+         <TouchableOpacity style={styles.buttonGoogle} >
             <FontAwesome name='google' size={25} color='white' />
             <Text style={styles.buttonText} >Continue with Google </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonFacebook} >
+         <TouchableOpacity style={styles.buttonFacebook} >
             <FontAwesome name='facebook' size={25} color='white' />
             <Text style={styles.buttonText} >Continue with Facebook </Text>    
         </TouchableOpacity>
 
-    </View> ;
+    </View>
+    
+    ) ;
 }
 
 SignInScreen.navigationOptions = {
@@ -48,14 +59,21 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     titleBlock : { 
-        marginLeft : 15 , height : '12%' , width : '60%' 
+        marginLeft : 15 , 
+        height : '12%' , 
+        width : '60%' 
     },
     inputBlock : {
+        flexDirection : 'row',
+        alignItems : 'center',
         height : '8%' , 
-        marginHorizontal : 18 
+        marginHorizontal : 18,
+        borderBottomColor : '#888' , 
+        borderBottomWidth : 1
     },
     input:{
-        borderBottomColor : '#888' , borderBottomWidth : 1
+        flex: 1,
+        marginLeft : 8,
     },
     smallTextblock :{
         height : '5%' , 
@@ -63,11 +81,22 @@ const styles = StyleSheet.create({
         marginHorizontal : 18 , 
         alignSelf : 'center'
     },
+    button :{
+        height : 62 , 
+        width : 63,
+        marginTop : 15 , 
+        marginHorizontal : 22 , 
+        borderRadius : 70 , 
+        backgroundColor : '#53B175', 
+        flexDirection : 'row' , 
+        alignItems : 'center' , 
+        justifyContent : 'space-evenly'
+    },
     buttonGoogle : {
         height : '10%' , 
         marginTop : 15 , 
         marginHorizontal : 22 , 
-        borderRadius : 20 , 
+        borderRadius : 35 , 
         backgroundColor : '#5383EC', 
         flexDirection : 'row' , 
         alignItems : 'center' , 
@@ -77,7 +106,7 @@ const styles = StyleSheet.create({
         height : '10%' , 
         marginTop : 15 , 
         marginHorizontal : 22 , 
-        borderRadius : 20 , 
+        borderRadius : 35 , 
         backgroundColor : '#4A66AC', 
         flexDirection : 'row' , 
         alignItems : 'center' , 

@@ -3,10 +3,13 @@ import { createStackNavigator } from 'react-navigation-stack';
 import SplashScreen from '../screens/SplashScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import SignInScreen from "../screens/SignInScreen";
+import NumberScreen from '../screens/NumberScreen';
+
 const groceryNavigator = createStackNavigator({
     //Splash : SplashScreen
-    Onboarding : OnboardingScreen
-    //Signin : SignInScreen
+    //Onboarding : OnboardingScreen
+    Signin : SignInScreen,
+    Number : NumberScreen
 });
 
 
