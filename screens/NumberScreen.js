@@ -32,7 +32,7 @@ const NumberScreen = props => {
                         maxLength={10}
                         keyboardType={'number-pad'}
                         onChangeText = {changePhoneNumber}
-                        autoFocus = {true}
+                        autoFocus 
                     />
                 </View>
             </View>
