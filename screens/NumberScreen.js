@@ -1,15 +1,27 @@
 import React , {useState} from 'react';
-import { TextInput,ScrollView,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Image,Text, SafeAreaView} from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text, } from 'react-native';
 import Flag from 'react-native-flags';
 
 const NumberScreen = props => {
 
-    const [mobileNumber , setMobileNumber] = useState();
+    const [enteredNumber , setEnteredNumber] = useState('');
+    const [mobileNumber , setMobileNumber] = useState('');
     const [error,setError] = useState('');
 
-    const changePhoneNumber = (number) => {
-        
+    const numberInputHandler = (number) => {
+        setEnteredNumber(number.replace(/[^0-9]/g, ''));
+    }
+
+    const confirmNumberHandler = () => {
+        const chosenNumber = enteredNumber;
+        if(chosenNumber.length < 10){
+            setError('Please Enter Valid Number');
+            return;
+        }
+        setMobileNumber(chosenNumber);
+        setEnteredNumber('');
+        setError('');
+        props.navigation.navigate('Verification');
     }
 
     return  (
@@ -28,21 +40,18 @@ const NumberScreen = props => {
                 <View style={{marginLeft : 10}} ><Text>+91</Text></View>
                 <View style={styles.input}>
                     <TextInput
-                        value={mobileNumber} 
+                        value={enteredNumber} 
                         maxLength={10}
-                        keyboardType={'number-pad'}
-                        onChangeText = {changePhoneNumber}
-                        autoFocus 
+                        keyboardType='numeric'
+                        onChangeText = {numberInputHandler}   
                     />
                 </View>
             </View>
-    
+            <View style={styles.errorBlock}><Text style={styles.errorText}>{error}</Text></View>
             <View style={styles.belowInputBlock}>
-                <View>
-                    <TouchableOpacity style={styles.button} >
-                        <Text style={styles.buttonText}>{'>'}</Text>
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity onPress={confirmNumberHandler} style={styles.button} >
+                    <Text style={styles.buttonText}>{'>'}</Text>
+                </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
@@ -79,6 +88,13 @@ const styles = StyleSheet.create({
     input:{
         flex: 1,
         marginLeft : 8,
+    },
+    errorBlock: {
+        marginTop : 5,
+        marginHorizontal : 18
+    },
+    errorText : {
+        color : 'red'
     },
     belowInputBlock: {
         flex: 1 ,justifyContent :'flex-end' , alignItems : 'flex-end'
