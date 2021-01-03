@@ -5,13 +5,15 @@ import OnboardingScreen from '../screens/OnboardingScreen';
 import SignInScreen from "../screens/SignInScreen";
 import NumberScreen from '../screens/NumberScreen';
 import VerificationScreen from '../screens/VerificationScreen';
+import SelectLocationScreen from '../screens/SelectLocationScreen';
 
 const groceryNavigator = createStackNavigator({
     //Splash : SplashScreen
     //Onboarding : OnboardingScreen
-    Signin : SignInScreen,
-    Number : NumberScreen,
-    Verification : VerificationScreen
+    // Signin : SignInScreen,
+    // Number : NumberScreen,
+    // Verification : VerificationScreen,
+    SelectLocation : SelectLocationScreen
 });
 
 

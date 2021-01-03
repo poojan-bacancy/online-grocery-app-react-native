@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text } from 'react-native';
 
 
-const VerificationScreen = () => {
+const VerificationScreen = props => {
 
     const [enteredCode , setEnteredCode] = useState('');
     const [code , setCode] = useState('');
@@ -21,6 +21,7 @@ const VerificationScreen = () => {
         setCode(chosenCode);
         setEnteredCode('');
         setError('');
+        props.navigation.navigate('SelectLocation')
     }
 
     return(
