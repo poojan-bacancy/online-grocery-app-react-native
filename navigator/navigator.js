@@ -10,9 +10,9 @@ import SelectLocationScreen from '../screens/SelectLocationScreen';
 const groceryNavigator = createStackNavigator({
     //Splash : SplashScreen
     //Onboarding : OnboardingScreen
-    // Signin : SignInScreen,
-    // Number : NumberScreen,
-    // Verification : VerificationScreen,
+    Signin : SignInScreen,
+    Number : NumberScreen,
+    Verification : VerificationScreen,
     SelectLocation : SelectLocationScreen
 });
 
