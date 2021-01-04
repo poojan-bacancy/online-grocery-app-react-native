@@ -7,7 +7,7 @@ const SignInScreen = props => {
     return  (
     <View style={styles.screen} >
             <View style={styles.imageBlock}>
-                <Image style={styles.image} source={require('../assets/images/groceryImage.png')} />
+                <Image style={styles.image} source={require('../../assets/images/groceryImage.png')} />
             </View>
             <View style={styles.titleBlock} >
                 <Text style={{fontSize : 28}} >
@@ -20,7 +20,7 @@ const SignInScreen = props => {
                 size={32}
             />
             <View style={{marginLeft : 10}} ><Text>+91</Text></View>
-            <View style={styles.input}><TextInput keyboardType={'number-pad'} onFocus={() => {
+            <View style={styles.input}><TextInput onFocus={() => {
                 props.navigation.navigate('Number')
             }} /></View>
         </View>
@@ -53,17 +53,19 @@ const styles = StyleSheet.create({
         backgroundColor : 'white'
     },
     imageBlock : {
-        height : '45%'
+        height : '42%'
     },
     image:{
         height: '100%'
     },
     titleBlock : { 
+        marginTop : 15,
         marginLeft : 15 , 
         height : '12%' , 
         width : '60%' 
     },
     inputBlock : {
+        marginTop : 5,
         flexDirection : 'row',
         alignItems : 'center',
         height : '8%' , 

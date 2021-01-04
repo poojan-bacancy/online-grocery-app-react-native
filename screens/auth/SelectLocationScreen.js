@@ -3,13 +3,13 @@ import { TouchableOpacity,View,StyleSheet,Text,Image,ScrollView } from 'react-na
 import DropDownPicker from 'react-native-dropdown-picker';
 import RNPickerSelect from 'react-native-picker-select';
 
-const SelectLocationScreen = () => {
+const SelectLocationScreen = props => {
 
     return(
        
         <View style={styles.screen}>
             <View style={styles.imageBlock}>
-                <Image style={styles.image} source={require('../assets/images/illustration.png')} />
+                <Image style={styles.image} source={require('../../assets/images/illustration.png')} />
             </View>
 
             <View style={styles.headerBlock}>
@@ -80,7 +80,7 @@ const SelectLocationScreen = () => {
                     />
                     </View>
                 </View>
-                <TouchableOpacity style={styles.button} >
+                <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('LogIn')} >
                     <Text style={styles.buttonText}>Submit</Text>    
                 </TouchableOpacity>
             </View>

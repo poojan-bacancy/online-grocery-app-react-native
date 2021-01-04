@@ -3,17 +3,17 @@ import { TouchableOpacity,Text, View,StyleSheet,Image, ImageBackground } from 'r
 
 const OnboardingScreen = props => {
     return  <View style={styles.screen} >
-        <ImageBackground style={styles.image} source={require('../assets/images/background.png')} >
-        <View style={{height:'50%',width:'100%'}}></View>
+        <ImageBackground style={styles.image} source={require('../../assets/images/background.png')} >
+        
         <View style={styles.secondHalf}>
-        <Image style={styles.logo} source={require('../assets/images/Group.png')} />
+        <Image style={styles.logo} source={require('../../assets/images/Group.png')} />
         <View style={styles.welcometextBlock} >
             <Text style={styles.welcomeText} >Welcome to our Store</Text>
         </View>
         <View style={styles.smalltextBlock} >
             <Text style={styles.smallText}>Ger your groceries in as fast as one hour</Text>
         </View>
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('Signin')} >
             <Text style={styles.buttonText}>Get Started</Text>    
         </TouchableOpacity>
         </View>
@@ -27,7 +27,8 @@ OnboardingScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
     screen : {
-        flex: 1
+        flex: 1,
+        
     },
     image: {
         flex: 1,
@@ -36,8 +37,9 @@ const styles = StyleSheet.create({
         
     },
     secondHalf : {
+        flex : 1,
         alignItems : 'center',
-        justifyContent : 'flex-start'
+        justifyContent : 'flex-end'
     },
     logo : {
         height : 64,
@@ -45,21 +47,21 @@ const styles = StyleSheet.create({
     },
     welcometextBlock : {
         marginTop : 10,
-        height : '23%',
-        width : '70%',
+        height : 86,
+        width : '80%',
        
     },
     welcomeText : {
-        fontFamily : 'Gilroy-Regular',
+        fontFamily : 'Gilroy-Medium',
         fontWeight : '600',
         fontSize : 48,
         textAlign : 'center',
         color : '#FFFFFF'
     },
     smalltextBlock : {
-        marginTop : 5,
+        marginTop : 20,
         height : '5%',
-        width : '80%',
+        width : '90%',
      
     },
     smallText : {
@@ -70,11 +72,11 @@ const styles = StyleSheet.create({
 
     },
     button : {
-        height : '18%',
+        height : 67,
         width : '80%', 
-        marginTop : 40 , 
+        marginVertical: 40 , 
         marginHorizontal : 22 , 
-        borderRadius : 25 , 
+        borderRadius : 19 , 
         backgroundColor : '#53B175', 
         flexDirection : 'row' , 
         alignItems : 'center' , 

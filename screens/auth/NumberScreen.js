@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState,useEffect} from 'react';
 import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text, } from 'react-native';
 import Flag from 'react-native-flags';
 
@@ -11,7 +11,7 @@ const NumberScreen = props => {
     const numberInputHandler = (number) => {
         setEnteredNumber(number.replace(/[^0-9]/g, ''));
     }
-
+   
     const confirmNumberHandler = () => {
         const chosenNumber = enteredNumber;
         if(chosenNumber.length < 10){
@@ -22,12 +22,10 @@ const NumberScreen = props => {
         setEnteredNumber('');
         setError('');
         props.navigation.navigate('Verification');
-    }
+    };
 
     return  (
-        <TouchableWithoutFeedback onPress={() => {
-            Keyboard.dismiss();
-        }}>
+       
         <KeyboardAvoidingView style={{flex:1}}>
             <View style={styles.headerMobileNumber}>
                 <Text style={styles.headerMobileNumberText}>Enter your Mobile Number</Text>
@@ -40,6 +38,7 @@ const NumberScreen = props => {
                 <View style={{marginLeft : 10}} ><Text>+91</Text></View>
                 <View style={styles.input}>
                     <TextInput
+                        autoFocus
                         value={enteredNumber} 
                         maxLength={10}
                         keyboardType='numeric'
@@ -54,7 +53,7 @@ const NumberScreen = props => {
                 </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
-        </TouchableWithoutFeedback>
+        
     ) ;
 }
 

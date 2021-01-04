@@ -1,22 +1,26 @@
 import React from 'react';
-import { View,StyleSheet,Image,Text } from 'react-native';
+import { View,StyleSheet,Image,Text,TouchableWithoutFeedback } from 'react-native';
 
 const SplashScreen = props => {
-    return  <View style={styles.screen} >
+
+    return  (
+    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Onboarding')}>
+    <View style={styles.screen} >
         <View style={styles.centered}>
             <View style={styles.firstBlock} >               
-                <Image style={styles.logo} source={require('../assets/images/Group.png')} />
+                <Image style={styles.logo} source={require('../../assets/images/Group.png')} />
             </View>
             <View style={styles.secondBlock} >
                 <View style={styles.titleBlock}>
-                    <Image style={styles.title} source={require('../assets/images/title.png')} />
+                    <Image style={styles.title} source={require('../../assets/images/title.png')} />
                 </View>
                 <View style={styles.smallTextBlock}>
                 <Text style={styles.smallText}>online groceriet</Text>
                 </View>
             </View>
         </View>
-    </View> ;
+    </View> 
+    </TouchableWithoutFeedback> );
 }
 
 SplashScreen.navigationOptions = {
@@ -45,15 +49,14 @@ const styles = StyleSheet.create({
     secondBlock : {
         width : '75%',
         marginRight : 5,
-        
+        alignItems : 'center'
     },
     titleBlock : {
         height : '50%'
     },
     title : {
-        height : '100%',
-        width : '100%',
-        
+        height : 46,
+        width : 194,
     },    
     smallTextBlock:{
         height : '25%',
