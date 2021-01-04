@@ -1,6 +1,7 @@
 import React , {useState,useEffect} from 'react';
-import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text, } from 'react-native';
+import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text, Button, } from 'react-native';
 import Flag from 'react-native-flags';
+import CustomButton from '../../components/CustomButton';
 
 const NumberScreen = props => {
 
@@ -48,9 +49,10 @@ const NumberScreen = props => {
             </View>
             <View style={styles.errorBlock}><Text style={styles.errorText}>{error}</Text></View>
             <View style={styles.belowInputBlock}>
-                <TouchableOpacity onPress={confirmNumberHandler} style={styles.button} >
+                <CustomButton label=">" style={styles.button} onPress={confirmNumberHandler} />
+                {/* <TouchableOpacity onPress={confirmNumberHandler} style={styles.button} >
                     <Text style={styles.buttonText}>{'>'}</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         </KeyboardAvoidingView>
         
@@ -101,17 +103,9 @@ const styles = StyleSheet.create({
     button :{
         height : 62 , 
         width : 63,
-        marginBottom : 15 , 
-        marginHorizontal : 22 , 
+        marginBottom : 15,
         borderRadius : 70 , 
         backgroundColor : '#53B175', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'space-evenly'
-    },
-    buttonText : { 
-        color :'white', 
-        fontSize : 30
     }
 });
 

@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
 import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text } from 'react-native';
+import CustomButton from '../../components/CustomButton';
 
 
 const VerificationScreen = props => {
@@ -52,9 +53,7 @@ const VerificationScreen = props => {
             <View style={styles.belowInputBlock}>   
                 <View style={styles.buttonBlock}>
                 <TouchableOpacity><Text style={{color:'#53B175'}}>Resend Code</Text></TouchableOpacity>   
-                <TouchableOpacity style={styles.button} onPress={confirmCodeHandler} >
-                    <Text style={styles.buttonText}>{'>'}</Text>
-                </TouchableOpacity>
+                <CustomButton label=">" style={styles.button} onPress={confirmCodeHandler} />
                 </View>
                 
             </View>
@@ -107,14 +106,12 @@ const styles = StyleSheet.create({
     },
     buttonBlock : {flexDirection : 'row' , alignItems : 'center' , justifyContent : 'space-between'},
     button :{
+        marginHorizontal : 0,
         height : 62 , 
         width : 63,
-        marginBottom : 15 , 
+        marginBottom : 15,
         borderRadius : 70 , 
         backgroundColor : '#53B175', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'space-evenly'
     },
     buttonText : { 
         color :'white', 

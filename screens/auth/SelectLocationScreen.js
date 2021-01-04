@@ -2,6 +2,7 @@ import React  from 'react';
 import { TouchableOpacity,View,StyleSheet,Text,Image,ScrollView } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import RNPickerSelect from 'react-native-picker-select';
+import CustomButton from '../../components/CustomButton';
 
 const SelectLocationScreen = props => {
 
@@ -80,9 +81,13 @@ const SelectLocationScreen = props => {
                     />
                     </View>
                 </View>
-                <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('LogIn')} >
+                <View style={{alignItems : 'center'}}>
+                <CustomButton label="Submit" style={styles.button} onPress={() => props.navigation.navigate('LogIn')}/>
+                </View>
+                
+                {/* <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('LogIn')} >
                     <Text style={styles.buttonText}>Submit</Text>    
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         </View>
         
@@ -139,22 +144,14 @@ const styles = StyleSheet.create({
         color : '#707070',
         
     },
-    button : {
-        alignSelf : 'center',
-        height : 65,
-        width : '85%', 
+    button : { 
         marginTop : 40 , 
         marginHorizontal : 22 , 
         borderRadius : 40 , 
         backgroundColor : '#53B175', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'center'
+        
     },
-    buttonText : {  
-        color :'white' , 
-        fontSize : 20
-    }
+    
 });
 
 

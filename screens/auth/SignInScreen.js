@@ -2,6 +2,7 @@ import React from 'react';
 import { TextInput,TouchableOpacity,View,StyleSheet,Image,Text} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Flag from 'react-native-flags';
+import CustomButton from '../../components/CustomButton';
 
 const SignInScreen = props => {
     return  (
@@ -29,15 +30,13 @@ const SignInScreen = props => {
                 Or connect with social media
             </Text>
         </View>
-         <TouchableOpacity style={styles.buttonGoogle} >
+        <CustomButton label="Continue with Google" style={styles.buttonGoogle}>
             <FontAwesome name='google' size={25} color='white' />
-            <Text style={styles.buttonText} >Continue with Google </Text>
-        </TouchableOpacity>
-         <TouchableOpacity style={styles.buttonFacebook} >
-            <FontAwesome name='facebook' size={25} color='white' />
-            <Text style={styles.buttonText} >Continue with Facebook </Text>    
-        </TouchableOpacity>
-
+        </CustomButton>
+        <CustomButton label="Continue with Facebook" style={styles.buttonFacebook}>
+        <FontAwesome name='facebook' size={25} color='white' />
+        </CustomButton>
+        
     </View>
     
     ) ;
@@ -50,7 +49,8 @@ SignInScreen.navigationOptions = {
 const styles = StyleSheet.create({
     screen : {
         flex: 1,
-        backgroundColor : 'white'
+        backgroundColor : 'white',
+        alignItems : 'center'
     },
     imageBlock : {
         height : '42%'
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     titleBlock : { 
+        alignSelf : 'flex-start',
         marginTop : 15,
         marginLeft : 15 , 
         height : '12%' , 
@@ -83,38 +84,9 @@ const styles = StyleSheet.create({
         marginHorizontal : 18 , 
         alignSelf : 'center'
     },
-    button :{
-        height : 62 , 
-        width : 63,
-        marginTop : 15 , 
-        marginHorizontal : 22 , 
-        borderRadius : 70 , 
-        backgroundColor : '#53B175', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'space-evenly'
-    },
-    buttonGoogle : {
-        height : '10%' , 
-        marginTop : 15 , 
-        marginHorizontal : 22 , 
-        borderRadius : 35 , 
-        backgroundColor : '#5383EC', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'space-evenly'
-    },
-    buttonFacebook : {
-        height : '10%' , 
-        marginTop : 15 , 
-        marginHorizontal : 22 , 
-        borderRadius : 35 , 
-        backgroundColor : '#4A66AC', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'space-evenly'
-    },
-    buttonText : {  color :'white' , fontSize : 20}
+    buttonGoogle : {backgroundColor : '#5383EC',marginVertical : 10},
+    buttonFacebook : {backgroundColor : '#4A66AC',marginVertical : 10},
+    
 
 });
 

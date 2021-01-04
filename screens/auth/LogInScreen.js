@@ -1,6 +1,7 @@
 import React from 'react';
 import {View,Text,StyleSheet,Image,TextInput,TouchableOpacity} from 'react-native';
 //import PasswordInputText from 'react-native-hide-show-password-input';
+import CustomButton from '../../components/CustomButton';
 
 const LogInScreen = props => {
     return (
@@ -28,11 +29,10 @@ const LogInScreen = props => {
             <TouchableOpacity style={styles.forgotpass} >
                 <Text style={{color :'black'}}>Forgot Password?</Text>
             </TouchableOpacity>
+            <View style={{alignItems : 'center'}}>
+            <CustomButton label="Log In" style={styles.button}/>
+            </View>
             
-            <TouchableOpacity style={styles.button} >
-                    <Text style={styles.buttonText}>Log In</Text>    
-            </TouchableOpacity>
-
             <View style={styles.askSignUpText}>
                 <Text>Don't have an account? </Text><TouchableOpacity onPress={() => props.navigation.navigate('SignUp')} ><Text style={styles.pressableText}>SignUp</Text></TouchableOpacity>
             </View>
@@ -46,7 +46,8 @@ LogInScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
     screen: {
-        flex: 1
+        flex: 1,
+
     },
     imageBlock :{
         justifyContent : 'center',
@@ -90,20 +91,8 @@ const styles = StyleSheet.create({
         alignItems : 'center'
     },
     button : {
-        alignSelf : 'center',
-        height : 65,
-        width : '85%', 
         marginTop : 40 , 
-        marginHorizontal : 22 , 
         borderRadius : 40 , 
-        backgroundColor : '#53B175', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'center'
-    },
-    buttonText : {  
-        color :'white' , 
-        fontSize : 20
     },
     askSignUpText :{ marginTop : 5,flexDirection : 'row' , alignItems : 'center' , justifyContent : 'center'},
     pressableText : { 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {TextInput,Image, TouchableOpacity ,View,Text,StyleSheet} from 'react-native';
+import CustomButton from '../../components/CustomButton';
 
 const SignUpScreen = props => {
     return (
@@ -32,9 +33,10 @@ const SignUpScreen = props => {
                 <Text><Text>By continuing you agree to our </Text><TouchableOpacity><Text style={styles.pressableText}>Terms of Service</Text></TouchableOpacity><Text> and</Text><TouchableOpacity><Text style={styles.pressableText}>Privacy Policy</Text></TouchableOpacity></Text>
             </View>
             
-            <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('Grocery')} >
-                    <Text style={styles.buttonText}>Sign Up</Text>    
-            </TouchableOpacity>
+            <View style={{alignItems : 'center'}}>
+                <CustomButton label="Sign Up" onPress={() => props.navigation.navigate('Grocery')} style={styles.button}/>
+            </View>
+
 
             <View style={styles.askSignUpText}>
                 <Text>Already have an account? </Text><TouchableOpacity onPress={() => props.navigation.navigate('LogIn')}><Text style={styles.pressableText}>SignIn</Text></TouchableOpacity>
@@ -90,22 +92,9 @@ const styles = StyleSheet.create({
         marginTop : 5,
         justifyContent : 'center',
     },
-    
     button : {
-        alignSelf : 'center',
-        height : 65,
-        width : '85%', 
         marginTop : 40 , 
-        marginHorizontal : 22 , 
         borderRadius : 40 , 
-        backgroundColor : '#53B175', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'center'
-    },
-    buttonText : {  
-        color :'white' , 
-        fontSize : 20
     },
     askSignUpText :{ marginTop : 5,flexDirection : 'row' , alignItems : 'center' , justifyContent : 'center'},
     pressableText : { 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity,Text, View,StyleSheet,Image, ImageBackground } from 'react-native';
+import CustomButton from '../../components/CustomButton';
 
 const OnboardingScreen = props => {
     return  <View style={styles.screen} >
@@ -13,9 +14,7 @@ const OnboardingScreen = props => {
         <View style={styles.smalltextBlock} >
             <Text style={styles.smallText}>Ger your groceries in as fast as one hour</Text>
         </View>
-        <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('Signin')} >
-            <Text style={styles.buttonText}>Get Started</Text>    
-        </TouchableOpacity>
+        <CustomButton label="Get Started" style={styles.button} onPress={() => props.navigation.navigate('Signin')}/>
         </View>
         </ImageBackground>
     </View> ;
@@ -72,20 +71,9 @@ const styles = StyleSheet.create({
 
     },
     button : {
-        height : 67,
-        width : '80%', 
-        marginVertical: 40 , 
-        marginHorizontal : 22 , 
-        borderRadius : 19 , 
-        backgroundColor : '#53B175', 
-        flexDirection : 'row' , 
-        alignItems : 'center' , 
-        justifyContent : 'center'
+        marginVertical : 40
     },
-    buttonText : {  
-        color :'white' , 
-        fontSize : 20
-    }
+    
 });
 
 export default OnboardingScreen;
