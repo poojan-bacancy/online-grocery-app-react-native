@@ -30,7 +30,7 @@ const SignUpScreen = props => {
             </View>
             
             <View style={styles.belowForm}>
-                <Text><Text>By continuing you agree to our </Text><TouchableOpacity><Text style={styles.pressableText}>Terms of Service</Text></TouchableOpacity><Text> and</Text><TouchableOpacity><Text style={styles.pressableText}>Privacy Policy</Text></TouchableOpacity></Text>
+                <View style={{flexDirection : 'row'}}><Text>By continuing you agree to our </Text><TouchableOpacity><Text style={styles.pressableText}>Terms of Service</Text></TouchableOpacity><Text> and</Text></View><TouchableOpacity><Text style={styles.pressableText}>Privacy Policy</Text></TouchableOpacity>
             </View>
             
             <View style={{alignItems : 'center'}}>
@@ -78,7 +78,8 @@ const styles = StyleSheet.create({
     },
     form:{
         marginHorizontal :18,
-        marginTop : 30
+        marginTop : 30,
+        
     },
     formField : {
         marginTop : 15
@@ -88,9 +89,9 @@ const styles = StyleSheet.create({
         borderBottomWidth : 1
     },
     belowForm :{
-        marginHorizontal : 18,
         marginTop : 5,
-        justifyContent : 'center',
+        marginHorizontal : 18,
+        
     },
     button : {
         marginTop : 40 , 
