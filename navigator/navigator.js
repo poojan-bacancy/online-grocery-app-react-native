@@ -23,12 +23,12 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const authFlowNavigator = createStackNavigator({
-    Splash : SplashScreen,
-    Onboarding : OnboardingScreen,
-    Signin : SignInScreen,
-    Verification : VerificationScreen,
-    SelectLocation : SelectLocationScreen,
-    LogIn : LogInScreen,
+    // Splash : SplashScreen,
+    // Onboarding : OnboardingScreen,
+    // Signin : SignInScreen,
+    // Verification : VerificationScreen,
+    // SelectLocation : SelectLocationScreen,
+    // LogIn : LogInScreen,
     SignUp : SignUpScreen
 });
 
