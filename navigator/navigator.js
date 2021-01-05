@@ -1,3 +1,4 @@
+import React from 'react';
 import { createAppContainer,createSwitchNavigator } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -17,10 +18,13 @@ import FavouritesScreen from '../screens/grocery/FavouritesScreen';
 import FiltersScreen from '../screens/grocery/FiltersScreen';
 import CartScreen from '../screens/grocery/CartScreen';
 import AccountScreen from '../screens/grocery/AccountScreen';
+import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const authFlowNavigator = createStackNavigator({
-    // Splash : SplashScreen,
-    // Onboarding : OnboardingScreen,
+    Splash : SplashScreen,
+    Onboarding : OnboardingScreen,
     Signin : SignInScreen,
     Verification : VerificationScreen,
     SelectLocation : SelectLocationScreen,
@@ -42,11 +46,52 @@ const exploreTab = createStackNavigator({
 });
 
 const groceryNavigator = createMaterialBottomTabNavigator({
-    Shop : shopTab,
-    Explore : exploreTab,
-    Cart : CartScreen,
-    Favourites : FavouritesScreen,
-    Account : AccountScreen
+    Shop : {
+        screen : shopTab,
+        navigationOptions : {
+            tabBarIcon : (tabInfo) => {
+                return <Entypo name='shop' size={23} color={tabInfo.tintColor} />
+            }
+        }
+    },
+    Explore : {
+        screen : exploreTab,
+        navigationOptions : {
+            tabBarIcon : (tabInfo) => {
+                return <MaterialCommunityIcons name='text-search' size={23} color={tabInfo.tintColor} />
+            }
+        }
+    },
+    Cart : {
+        screen : CartScreen,
+        navigationOptions : {
+            tabBarIcon : (tabInfo) => {
+                return <Entypo name='shopping-cart' size={23} color={tabInfo.tintColor} />
+            }
+        }
+    },
+    Favourites : {
+        screen : FavouritesScreen,
+        navigationOptions : {
+            tabBarIcon : (tabInfo) => {
+                return <Entypo name='heart-outlined' size={23} color={tabInfo.tintColor} />
+            }
+        }
+    },
+    Account : {
+        screen : AccountScreen,
+        navigationOptions : {
+            tabBarIcon : (tabInfo) => {
+                return <AntDesign name='user' size={23} color={tabInfo.tintColor} />
+            }
+        }
+    }
+}, {
+    activeColor : '#53B175',
+    shifting : false,
+    barStyle : {
+        backgroundColor : 'white',
+    }
 });
 
 const mainNavigator = createSwitchNavigator({
