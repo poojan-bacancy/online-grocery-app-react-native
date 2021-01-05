@@ -4,7 +4,6 @@ import { createStackNavigator } from 'react-navigation-stack';
 import SplashScreen from '../screens/auth/SplashScreen';
 import OnboardingScreen from '../screens/auth/OnboardingScreen';
 import SignInScreen from "../screens/auth/SignInScreen";
-import NumberScreen from '../screens/auth/NumberScreen';
 import VerificationScreen from '../screens/auth/VerificationScreen';
 import SelectLocationScreen from '../screens/auth/SelectLocationScreen';
 import LogInScreen from '../screens/auth/LogInScreen';
@@ -20,10 +19,9 @@ import CartScreen from '../screens/grocery/CartScreen';
 import AccountScreen from '../screens/grocery/AccountScreen';
 
 const authFlowNavigator = createStackNavigator({
-    Splash : SplashScreen,
-    Onboarding : OnboardingScreen,
+    // Splash : SplashScreen,
+    // Onboarding : OnboardingScreen,
     Signin : SignInScreen,
-    Number : NumberScreen,
     Verification : VerificationScreen,
     SelectLocation : SelectLocationScreen,
     LogIn : LogInScreen,
