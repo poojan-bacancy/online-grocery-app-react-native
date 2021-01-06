@@ -15,7 +15,7 @@ const HomeScreen = props => {
                 <Text style={styles.locationText}> Dhaka , Banassre</Text>
             </View>
             <SearchBar />
-           <ScrollView>
+           <ScrollView showsVerticalScrollIndicator={false} >
            <ProductList title="Exclusive Offer" />
            <ProductList title="Best Selling" />
            <ProductList title="Groceries" />

@@ -1,14 +1,13 @@
 import React from 'react';
-import { View , ScrollView  , StyleSheet} from 'react-native';
+import { View  , StyleSheet} from 'react-native';
 import SearchBar from '../../components/SearchBar';
 import CategoryList from '../../components/CategoryList';
+
 const ExploreCategoriesScreen = () => {
     return (
         <View style={styles.screen}>
             <SearchBar />
-            
-                <CategoryList />
-            
+            <CategoryList />
         </View>
     );
 }

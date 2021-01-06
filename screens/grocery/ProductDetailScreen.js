@@ -11,6 +11,11 @@ const ProductDetailScreen = () => {
     );
 }
 
+ProductDetailScreen.navigationOptions = {
+    headerShown : false,
+}
+
+
 const styles = StyleSheet.create({
 
 });

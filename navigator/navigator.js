@@ -33,23 +33,29 @@ const authFlowNavigator = createStackNavigator({
 });
 
 const defaultStackNavOptions = {
+    headerTitleContainerStyle: {
+        left: 0, 
+    },
     headerTitleStyle : {
-        alignSelf: 'center' ,
+        flex : 1,
+        textAlign : 'center',
         fontFamily : 'Gilroy-Bold',
         fontSize : 20
     },
 }
 
-
 const shopTab = createStackNavigator({
     Home : HomeScreen,
     ProductDetail : ProductDetailScreen,
     Search : SearchScreen
-},);
+},{
+    defaultNavigationOptions : defaultStackNavOptions
+});
 
 const exploreTab = createStackNavigator({
     Categories : ExploreCategoriesScreen,
     CategoriesDetail : ExploreCategoriesDetailScreen,
+    ProductDetail : ProductDetailScreen,
     Filters: FiltersScreen,
     Search : SearchScreen
 },{
