@@ -32,17 +32,46 @@ const authFlowNavigator = createStackNavigator({
     SignUp : SignUpScreen
 });
 
+const defaultStackNavOptions = {
+    headerTitleStyle : {
+        alignSelf: 'center' ,
+        fontFamily : 'Gilroy-Bold',
+        fontSize : 20
+    },
+}
+
+
 const shopTab = createStackNavigator({
     Home : HomeScreen,
     ProductDetail : ProductDetailScreen,
     Search : SearchScreen
-});
+},);
 
 const exploreTab = createStackNavigator({
     Categories : ExploreCategoriesScreen,
     CategoriesDetail : ExploreCategoriesDetailScreen,
     Filters: FiltersScreen,
     Search : SearchScreen
+},{
+    defaultNavigationOptions : defaultStackNavOptions
+});
+
+const cartNavigator = createStackNavigator({
+    Cart : CartScreen
+},{
+    defaultNavigationOptions : defaultStackNavOptions
+});
+
+const favouritesNavigator = createStackNavigator({
+    Favourites : FavouritesScreen
+},{
+    defaultNavigationOptions : defaultStackNavOptions
+});
+
+const accountNavigator = createStackNavigator({
+    Account : AccountScreen
+},{
+    defaultNavigationOptions : defaultStackNavOptions
 });
 
 const groceryNavigator = createMaterialBottomTabNavigator({
@@ -63,7 +92,7 @@ const groceryNavigator = createMaterialBottomTabNavigator({
         }
     },
     Cart : {
-        screen : CartScreen,
+        screen : cartNavigator,
         navigationOptions : {
             tabBarIcon : (tabInfo) => {
                 return <Entypo name='shopping-cart' size={23} color={tabInfo.tintColor} />
@@ -71,7 +100,7 @@ const groceryNavigator = createMaterialBottomTabNavigator({
         }
     },
     Favourites : {
-        screen : FavouritesScreen,
+        screen : favouritesNavigator,
         navigationOptions : {
             tabBarIcon : (tabInfo) => {
                 return <Entypo name='heart-outlined' size={23} color={tabInfo.tintColor} />
@@ -79,7 +108,7 @@ const groceryNavigator = createMaterialBottomTabNavigator({
         }
     },
     Account : {
-        screen : AccountScreen,
+        screen : accountNavigator,
         navigationOptions : {
             tabBarIcon : (tabInfo) => {
                 return <AntDesign name='user' size={23} color={tabInfo.tintColor} />

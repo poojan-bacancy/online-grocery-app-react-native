@@ -4,7 +4,7 @@ import SearchBar from '../../components/SearchBar';
 import Entypo from 'react-native-vector-icons/Entypo';
 import ProductList from '../../components/ProductList';
 
-const HomeScreen = () => {
+const HomeScreen = props => {
     return (
         <View style={styles.screen}>
             <View style={styles.imageBlock}>

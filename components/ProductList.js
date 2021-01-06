@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         justifyContent : 'space-between',
         alignItems : 'center',
-        marginHorizontal : 5
+        marginHorizontal : 5,
+        marginTop : 5
     },
     title : {
         fontFamily : 'Gilroy-Medium',
