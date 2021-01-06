@@ -1,8 +1,8 @@
 import React from 'react';
-import { View,Text ,Image , StyleSheet} from 'react-native';
+import { View,Text,ScrollView ,Image , StyleSheet} from 'react-native';
 import SearchBar from '../../components/SearchBar';
 import Entypo from 'react-native-vector-icons/Entypo';
-import ProductCard from '../../components/ProductCard';
+import ProductList from '../../components/ProductList';
 
 const HomeScreen = () => {
     return (
@@ -15,10 +15,11 @@ const HomeScreen = () => {
                 <Text style={styles.locationText}> Dhaka , Banassre</Text>
             </View>
             <SearchBar />
-            <View style={{flexDirection :'row'}}>
-            <ProductCard />
-            <ProductCard />
-            </View>
+           <ScrollView>
+           <ProductList title="Exclusive Offer" />
+           <ProductList title="Best Selling" />
+           <ProductList title="Groceries" />
+           </ScrollView>
         </View>
     );
 }

@@ -1,28 +1,28 @@
 import React from "react";
-import { TouchableOpacity,Text,Image, StyleSheet , View} from "react-native";
+import { Text,Image, StyleSheet , View} from "react-native";
 import CustomButton from "./CustomButton";
 
-const ProductCard = props => {
+const ProductCard = ({prod}) => {
   return (
-        <TouchableOpacity style={styles.backgroundStyle}>
+        <View style={styles.backgroundStyle} >
             <View style={styles.imageBlock}>
                 <Image style={styles.image} source={require('../assets/images/banana.png')} />
             </View>
             <Text style={styles.name} >
-                Organic Bananas
+                {prod.name}
             </Text>
             <Text style={styles.description}>
-            7pcs, Priceg
+            {prod.description}
             </Text>
             <View style={styles.belowBlock}>
                 <View style={styles.priceAndButtonBlock}>
                     <Text style={styles.price}>
-                        $4.99
+                        ${prod.price}
                     </Text>
                     <CustomButton  label="+" style={styles.button} />
                 </View>
             </View>
-        </TouchableOpacity>
+        </View>
   );
 };
 
