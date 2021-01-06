@@ -1,5 +1,5 @@
 import React from 'react';
-import {  TouchableOpacity,View,Text ,Image , StyleSheet} from 'react-native';
+import { View,Text ,Image , StyleSheet} from 'react-native';
 import SearchBar from '../../components/SearchBar';
 import Entypo from 'react-native-vector-icons/Entypo';
 import ProductCard from '../../components/ProductCard';
@@ -16,8 +16,8 @@ const HomeScreen = () => {
             </View>
             <SearchBar />
             <View style={{flexDirection :'row'}}>
-            <TouchableOpacity><ProductCard /></TouchableOpacity>
-            <TouchableOpacity><ProductCard /></TouchableOpacity>
+            <ProductCard />
+            <ProductCard />
             </View>
         </View>
     );
