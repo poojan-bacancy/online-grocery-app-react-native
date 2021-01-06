@@ -35,6 +35,7 @@ const authFlowNavigator = createStackNavigator({
 const defaultStackNavOptions = {
     headerTitleContainerStyle: {
         left: 0, 
+        right : 0
     },
     headerTitleStyle : {
         flex : 1,

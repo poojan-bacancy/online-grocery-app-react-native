@@ -1,6 +1,8 @@
 import React from 'react';
 import { View ,TouchableOpacity , FlatList , StyleSheet} from 'react-native';
 import ProductCard from '../../components/ProductCard';
+import { HeaderButtons , Item} from 'react-navigation-header-buttons';
+import  HeaderButton from '../../components/HeaderButton';
 
 const data = [
     {
@@ -77,7 +79,14 @@ const ExploreCategoriesDetailScreen = props => {
 
 ExploreCategoriesDetailScreen.navigationOptions = {
     headerTitle : 'Category',
-    
+    headerRight : () => 
+        <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item 
+            title="Filter" 
+            iconName = 'sliders'
+            onPress={()=>{}} 
+        />
+        </HeaderButtons> 
 }
 
 const styles = StyleSheet.create({
