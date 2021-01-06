@@ -1,7 +1,8 @@
 import React from 'react';
-import { View,Text ,Image , StyleSheet} from 'react-native';
+import {  TouchableOpacity,View,Text ,Image , StyleSheet} from 'react-native';
 import SearchBar from '../../components/SearchBar';
 import Entypo from 'react-native-vector-icons/Entypo';
+import ProductCard from '../../components/ProductCard';
 
 const HomeScreen = () => {
     return (
@@ -14,6 +15,10 @@ const HomeScreen = () => {
                 <Text style={styles.locationText}> Dhaka , Banassre</Text>
             </View>
             <SearchBar />
+            <View style={{flexDirection :'row'}}>
+            <TouchableOpacity><ProductCard /></TouchableOpacity>
+            <TouchableOpacity><ProductCard /></TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -24,7 +29,8 @@ HomeScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
     screen : {
-        flex : 1
+        flex : 1,
+        marginHorizontal : 10,
     },
     imageBlock : {
         justifyContent : 'center',
