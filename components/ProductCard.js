@@ -53,8 +53,7 @@ const styles = StyleSheet.create({
     },
     description : {
         fontFamily : 'Gilroy-Medium',
-        fontSize : 14,
-        
+        fontSize : 14,  
         marginTop : 5,
         color : '#7C7C7C'
     },
