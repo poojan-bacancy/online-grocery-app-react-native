@@ -27,8 +27,9 @@ const styles = StyleSheet.create({
     },
     buttonText : {  
         color :'white' , 
-        fontSize : 20,
-        fontFamily : 'Gilroy-Regular'
+        fontSize : 18,
+        fontFamily : 'Gilroy-Regular',
+        fontWeight : '600',
     }
 });
 

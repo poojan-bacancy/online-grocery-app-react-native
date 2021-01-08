@@ -1,6 +1,6 @@
 import React from 'react';
 import { View , ScrollView , StyleSheet} from 'react-native';
-import FavouriteItem from '../../components/FavourIteItem';
+import FavouriteItem from '../../components/FavouriteItem';
 import CustomButton from '../../components/CustomButton';
 
 const FavouritesScreen = () => {
