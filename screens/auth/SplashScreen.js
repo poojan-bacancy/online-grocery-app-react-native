@@ -2,7 +2,6 @@ import React from 'react';
 import { View,StyleSheet,Image,Text,TouchableWithoutFeedback } from 'react-native';
 
 const SplashScreen = props => {
-
     return  (
     <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Onboarding')}>
     <View style={styles.screen} >

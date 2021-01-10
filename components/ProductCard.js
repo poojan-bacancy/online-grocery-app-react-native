@@ -1,6 +1,7 @@
 import React from "react";
 import { Text,Image, StyleSheet , View} from "react-native";
 import CustomButton from "./CustomButton";
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const ProductCard = ({prod}) => {
   return (
@@ -19,7 +20,9 @@ const ProductCard = ({prod}) => {
                     <Text style={styles.price}>
                         ${prod.price}
                     </Text>
-                    <CustomButton  label="+" style={styles.button} />
+                    <CustomButton style={styles.button} >
+                    <Entypo name="plus" style={styles.buttonSymbol} color="white" size={23}/>
+                    </CustomButton>
                 </View>
             </View>
         </View>
@@ -77,7 +80,11 @@ const styles = StyleSheet.create({
         width : 45,
         borderRadius : 17,
         marginHorizontal : 0   
+    },
+    buttonSymbol : {
+        marginLeft : 6
     }
+    
 });
 
 export default ProductCard;

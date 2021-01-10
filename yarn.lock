@@ -5797,6 +5797,11 @@ react-native-flags@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-native-flags/-/react-native-flags-1.0.0.tgz#8bf99b58e125ca6057d7923549132b3579754ed3"
   integrity sha1-i/mbWOElymBX15I1SRMrNXl1TtM=
 
+react-native-flatlist-slider@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-flatlist-slider/-/react-native-flatlist-slider-1.0.5.tgz#5822e076a13958d9f0e0da3f6e83f1af42c30baa"
+  integrity sha512-RT4SLq0TlmAT5z+7c8jviFcX8UYMehyrudXAR7je3HkDilgnUMBPs/hG3zzlPAJ68TYW2ANIh7/Ht1THbWWydA==
+
 react-native-gesture-handler@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.9.0.tgz#e441b1c0277c3fd4ca3e5c58fdd681e2f0ceddf0"

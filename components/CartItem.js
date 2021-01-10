@@ -3,7 +3,7 @@ import { View , Image, Text , TouchableOpacity,StyleSheet} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import CustomButton from './CustomButton';
 
-const CartItem = () => {
+const CartItem =  props  => {
     return (
         <View style={styles.backgroundStyle}>
             <View style={styles.imageBlock}>
