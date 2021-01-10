@@ -6,7 +6,6 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import CustomButton from '../../components/CustomButton';
 import {FlatListSlider} from 'react-native-flatlist-slider';
 
-
 const images = [
     {
         id : 1,
@@ -40,8 +39,8 @@ const ProductDetailScreen = props => {
                 data = {images}
                 imageKey={'image'}
                 local
-                contentContainerStyle={{paddingTop: 25 , paddingBottom : 10}}
-                indicatorContainerStyle	= {{ marginBottom : 25}}
+                contentContainerStyle={{paddingTop: 25 , paddingBottom : 35}}
+                indicatorContainerStyle	= {{ position:'absolute', bottom: 15 }}
                 indicatorActiveWidth={20}
                 indicatorActiveColor={'#53B175'}
             />

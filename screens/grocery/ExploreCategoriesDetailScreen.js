@@ -3,6 +3,8 @@ import { View ,TouchableOpacity , FlatList , StyleSheet} from 'react-native';
 import ProductCard from '../../components/ProductCard';
 import { HeaderButtons , Item} from 'react-navigation-header-buttons';
 import  HeaderButton from '../../components/HeaderButton';
+import FontAwesome  from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const data = [
     {
@@ -82,6 +84,7 @@ ExploreCategoriesDetailScreen.navigationOptions = {
     headerRight : () => 
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item 
+            IconComponent = {FontAwesome}
             title="Filter" 
             iconName = 'sliders'
             onPress={()=>{}} 
@@ -91,6 +94,7 @@ ExploreCategoriesDetailScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
     screen : {
+        alignItems : 'center',
         flex : 1,
         marginHorizontal : 12
     },

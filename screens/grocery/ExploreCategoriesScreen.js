@@ -19,6 +19,7 @@ ExploreCategoriesScreen.navigationOptions = {
 const styles = StyleSheet.create({
     screen : {
         flex : 1,
+        alignItems : 'center',
         marginHorizontal : 10,
     }
 });

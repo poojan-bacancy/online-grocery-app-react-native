@@ -38,11 +38,10 @@ const defaultStackNavOptions = {
         right : 0
     },
     headerTitleStyle : {
-        flex : 1,
         textAlign : 'center',
         fontFamily : 'Gilroy-Bold',
         fontSize : 20
-    },
+    }
 }
 
 const shopTab = createStackNavigator({
