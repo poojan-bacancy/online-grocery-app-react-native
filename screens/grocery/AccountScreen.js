@@ -1,6 +1,6 @@
 import React from 'react';
 import { View ,Image, Text , ScrollView , TouchableOpacity ,StyleSheet} from 'react-native';
-import CustomButton from '../../components/CustomButton';
+import CustomButton from '../../src/components/CustomButton';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';

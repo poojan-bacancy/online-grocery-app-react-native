@@ -1,8 +1,8 @@
 import React from 'react';
 import { View ,TouchableOpacity , FlatList , StyleSheet} from 'react-native';
-import ProductCard from '../../components/ProductCard';
+import ProductCard from '../../src/components/ProductCard';
 import { HeaderButtons , Item} from 'react-navigation-header-buttons';
-import  HeaderButton from '../../components/HeaderButton';
+import  HeaderButton from '../../src/components/HeaderButton';
 import FontAwesome  from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 

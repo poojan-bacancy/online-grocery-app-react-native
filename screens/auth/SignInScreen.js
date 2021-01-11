@@ -1,8 +1,8 @@
 import React , { useState } from 'react';
-import { TextInput,KeyboardAvoidingView,TouchableWithoutFeedback,View,StyleSheet,Image,Text} from 'react-native';
+import { TextInput , KeyboardAvoidingView , TouchableWithoutFeedback , View , StyleSheet , Image , Text } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Flag from 'react-native-flags';
-import CustomButton from '../../components/CustomButton';
+import CustomButton from '../../src/components/CustomButton';
 
 const Input = (props) => {
     return(
@@ -14,9 +14,9 @@ const Input = (props) => {
             <View style={{marginLeft : 10}} ><Text>+91</Text></View>
             <View style={styles.input}>
                 <TextInput 
-                {...props} 
-                maxLength={10}
-                keyboardType='numeric'        
+                    {...props} 
+                    maxLength={10}
+                    keyboardType='numeric'        
                 />
             </View>
         </View>
@@ -49,39 +49,39 @@ const SignInScreen = props => {
     if(isFocused) {
         return (
             <TouchableWithoutFeedback onPress={()=>{ setIsFocused(false) }}>
-            <KeyboardAvoidingView style={{flex:1}}>
-            <View style={styles.headerMobileNumber}>
-                <Text style={styles.headerMobileNumberText}>Enter your Mobile Number</Text>
-            </View>
-            <View style={styles.smallHeaderMobileNumber}>
-                <Text style={styles.smallHeaderMobileNumberText}>Mobile Number</Text>
-            </View>  
-            <Input 
-                autoFocus
-                value={enteredNumber}
-                onChangeText = {numberInputHandler}
-            />       
-            <View style={styles.errorBlock}><Text style={styles.errorText}>{error}</Text></View>
-            <View style={styles.belowInputBlock}>
-                <CustomButton label=">" style={styles.button} onPress={confirmNumberHandler} />
-            </View>
-        </KeyboardAvoidingView>
-        </TouchableWithoutFeedback>
+                <KeyboardAvoidingView style={{flex:1}}>
+                    <View style={styles.headerMobileNumber}>
+                        <Text style={styles.headerMobileNumberText}>Enter your Mobile Number</Text>
+                    </View>
+                    <View style={styles.smallHeaderMobileNumber}>
+                        <Text style={styles.smallHeaderMobileNumberText}>Mobile Number</Text>
+                    </View>  
+                    <Input 
+                        autoFocus
+                        value={enteredNumber}
+                        onChangeText = {numberInputHandler}
+                    />       
+                    <View style={styles.errorBlock}><Text style={styles.errorText}>{error}</Text></View>
+                    <View style={styles.belowInputBlock}>
+                        <CustomButton label=">" style={styles.button} onPress={confirmNumberHandler} />
+                    </View>
+                </KeyboardAvoidingView>
+            </TouchableWithoutFeedback>
         );
     }else{
-        return  (
+        return (
             <View style={styles.screen} >
-                    <View style={styles.imageBlock}>
-                        <Image style={styles.image} source={require('../../assets/images/groceryImage.png')} />
-                    </View>
-                    <View style={styles.titleBlock} >
-                        <Text style={{fontSize : 28}} >
-                            Get your groceries with nectar
-                        </Text>
-                    </View>
-                    <Input 
-                        onFocus={() => {setIsFocused(true)}}
-                    />
+                <View style={styles.imageBlock}>
+                    <Image style={styles.image} source={require('../../assets/images/groceryImage.png')} />
+                </View>
+                <View style={styles.titleBlock} >
+                    <Text style={{fontSize : 28}} >
+                        Get your groceries with nectar
+                    </Text>
+                </View>
+                <Input 
+                    onFocus={() => {setIsFocused(true)}}
+                />
                 <View style={styles.smallTextblock}>
                     <Text>
                         Or connect with social media
@@ -91,7 +91,7 @@ const SignInScreen = props => {
                     <FontAwesome name='google' size={25} color='white' />
                 </CustomButton>
                 <CustomButton label="Continue with Facebook" style={styles.buttonFacebook}>
-                <FontAwesome name='facebook' size={25} color='white' />
+                    <FontAwesome name='facebook' size={25} color='white' />
                 </CustomButton>
             </View>           
         ) ;
@@ -157,10 +157,15 @@ const styles = StyleSheet.create({
         marginHorizontal : 18
     },
     headerMobileNumberText : {
-        fontFamily:'Gilroy-Medium' , fontWeight : '600', fontSize:26
+        fontFamily:'Gilroy-Medium' , 
+        fontWeight : '600', 
+        fontSize:26
     },
     smallHeaderMobileNumberText : {
-        fontFamily:'Gilroy-Medium' , fontWeight : '600', fontSize:16 , color : '#707070'
+        fontFamily:'Gilroy-Medium' , 
+        fontWeight : '600', 
+        fontSize:16 , 
+        color : '#707070'
     },
     errorBlock: {
         marginTop : 5,
@@ -170,14 +175,16 @@ const styles = StyleSheet.create({
         color : 'red'
     },
     belowInputBlock: {
-        flex: 1 ,justifyContent :'flex-end' , alignItems : 'flex-end'
+        flex: 1 ,
+        justifyContent :'flex-end' , 
+        alignItems : 'flex-end'
     },
     button :{
         height : 62 , 
         width : 63,
         marginBottom : 15,
         borderRadius : 70 , 
-        backgroundColor : '#53B175', 
+        backgroundColor : '#53B175' 
     }
 });
 

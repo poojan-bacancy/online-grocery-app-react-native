@@ -1,8 +1,8 @@
 import React from 'react';
 import { View,Text,ScrollView ,Image , StyleSheet} from 'react-native';
-import SearchBar from '../../components/SearchBar';
+import SearchBar from '../../src/components/SearchBar';
 import Entypo from 'react-native-vector-icons/Entypo';
-import ProductList from '../../components/ProductList';
+import ProductList from '../../src/components/ProductList';
 import {FlatListSlider} from 'react-native-flatlist-slider';
 
 const images = [

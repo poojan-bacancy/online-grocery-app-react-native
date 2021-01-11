@@ -1,7 +1,6 @@
 import React , {useState} from 'react';
 import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text } from 'react-native';
-import CustomButton from '../../components/CustomButton';
-
+import CustomButton from '../../src/components/CustomButton';
 
 const VerificationScreen = props => {
 
@@ -26,37 +25,34 @@ const VerificationScreen = props => {
     }
 
     return(
-        <TouchableWithoutFeedback onPress={() => {
-            Keyboard.dismiss();
-        }}>
+        <TouchableWithoutFeedback onPress={ () => { Keyboard.dismiss(); } }>
             <KeyboardAvoidingView style={{flex:1}}>
-            <View style={styles.headerBlock}>
-                <Text style={styles.headerText}>Enter your 4-digit code</Text>
-            </View>
-            <View style={styles.smallHeaderBLock}>
-                <Text style={styles.smallHeaderText}>Code</Text>
-            </View>         
-            <View style={styles.inputBlock}>                
-                <View style={styles.input}>
-                    <TextInput
-                        value = {enteredCode}
-                        placeholder = '- - - -'
-                        fontSize = {18}
-                        placeholderTextColor = 'black'
-                        maxLength={4}
-                        keyboardType='numeric'
-                        onChangeText={codeInputHandler}
-                    />
+                <View style={styles.headerBlock}>
+                    <Text style={styles.headerText}>Enter your 4-digit code</Text>
                 </View>
-            </View>
-            <View style={styles.errorBlock}><Text style={styles.errorText}>{error}</Text></View>
-            <View style={styles.belowInputBlock}>   
-                <View style={styles.buttonBlock}>
-                <TouchableOpacity><Text style={{color:'#53B175'}}>Resend Code</Text></TouchableOpacity>   
-                <CustomButton label=">" style={styles.button} onPress={confirmCodeHandler} />
+                <View style={styles.smallHeaderBLock}>
+                    <Text style={styles.smallHeaderText}>Code</Text>
+                </View>         
+                <View style={styles.inputBlock}>                
+                    <View style={styles.input}>
+                        <TextInput
+                            value = {enteredCode}
+                            placeholder = '- - - -'
+                            fontSize = {18}
+                            placeholderTextColor = 'black'
+                            maxLength={4}
+                            keyboardType='numeric'
+                            onChangeText={codeInputHandler}
+                        />
+                    </View>
                 </View>
-                
-            </View>
+                <View style={styles.errorBlock}><Text style={styles.errorText}>{error}</Text></View>
+                <View style={styles.belowInputBlock}>   
+                    <View style={styles.buttonBlock}>
+                        <TouchableOpacity><Text style={{color:'#53B175'}}>Resend Code</Text></TouchableOpacity>   
+                        <CustomButton label=">" style={styles.button} onPress={confirmCodeHandler} />
+                    </View>
+                </View>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
     );
@@ -77,10 +73,15 @@ const styles = StyleSheet.create({
         marginHorizontal : 18
     },
     headerText : {
-        fontFamily:'Gilroy-Medium' , fontWeight : '600', fontSize:26
+        fontFamily:'Gilroy-Medium' , 
+        fontWeight : '600', 
+        fontSize:26
     },
     smallHeaderText : {
-        fontFamily:'Gilroy-Medium' , fontWeight : '600', fontSize:16 , color : '#707070'
+        fontFamily:'Gilroy-Medium' , 
+        fontWeight : '600', 
+        fontSize:16 , 
+        color : '#707070'
     },
     inputBlock : {
         flexDirection : 'row',
@@ -102,9 +103,15 @@ const styles = StyleSheet.create({
         color : 'red'
     },
     belowInputBlock: {
-        flex: 1 ,justifyContent :'flex-end', marginHorizontal : 18
+        flex: 1 ,
+        justifyContent :'flex-end', 
+        marginHorizontal : 18
     },
-    buttonBlock : {flexDirection : 'row' , alignItems : 'center' , justifyContent : 'space-between'},
+    buttonBlock : {
+        flexDirection : 'row' , 
+        alignItems : 'center' , 
+        justifyContent : 'space-between'
+    },
     button :{
         marginHorizontal : 0,
         height : 62 , 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View,Text,StyleSheet,Image,TextInput,TouchableOpacity} from 'react-native';
 //import PasswordInputText from 'react-native-hide-show-password-input';
-import CustomButton from '../../components/CustomButton';
+import CustomButton from '../../src/components/CustomButton';
 
 const LogInScreen = props => {
     return (

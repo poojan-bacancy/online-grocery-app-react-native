@@ -7,7 +7,7 @@ const CartItem =  props  => {
     return (
         <View style={styles.backgroundStyle}>
             <View style={styles.imageBlock}>
-                <Image style={styles.image} source={require('../assets/images/cartImage.png')} />
+                <Image style={styles.image} source={require('../../assets/images/cartImage.png')} />
             </View>
             <View style={styles.secondBlock}>
                 <View style={styles.titleBlock}>

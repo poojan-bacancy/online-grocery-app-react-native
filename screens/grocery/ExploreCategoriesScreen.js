@@ -1,7 +1,7 @@
 import React from 'react';
 import { View  , StyleSheet} from 'react-native';
-import SearchBar from '../../components/SearchBar';
-import CategoryList from '../../components/CategoryList';
+import SearchBar from '../../src/components/SearchBar';
+import CategoryList from '../../src/components/CategoryList';
 
 const ExploreCategoriesScreen = () => {
     return (

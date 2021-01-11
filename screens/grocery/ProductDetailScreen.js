@@ -3,7 +3,7 @@ import { View , Text ,ScrollView,TouchableOpacity, StyleSheet} from 'react-nativ
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
-import CustomButton from '../../components/CustomButton';
+import CustomButton from '../../src/components/CustomButton';
 import {FlatListSlider} from 'react-native-flatlist-slider';
 
 const images = [
@@ -39,8 +39,9 @@ const ProductDetailScreen = props => {
                 data = {images}
                 imageKey={'image'}
                 local
-                contentContainerStyle={{paddingTop: 25 , paddingBottom : 35}}
-                indicatorContainerStyle	= {{ position:'absolute', bottom: 15 }}
+                onPress = { () => {} }
+                contentContainerStyle={{paddingTop: 30 , paddingBottom : 60}}
+                indicatorContainerStyle	= {{ position:'absolute', bottom: 20 }}
                 indicatorActiveWidth={20}
                 indicatorActiveColor={'#53B175'}
             />

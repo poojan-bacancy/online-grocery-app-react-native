@@ -7,7 +7,7 @@ const ProductCard = ({prod}) => {
   return (
         <View style={styles.backgroundStyle} >
             <View style={styles.imageBlock}>
-                <Image style={styles.image} source={require('../assets/images/banana.png')} />
+                <Image style={styles.image} source={require('../../assets/images/banana.png')} />
             </View>
             <Text style={styles.name} >
                 {prod.name}

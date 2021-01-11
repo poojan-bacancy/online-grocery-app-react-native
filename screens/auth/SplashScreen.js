@@ -1,25 +1,26 @@
 import React from 'react';
-import { View,StyleSheet,Image,Text,TouchableWithoutFeedback } from 'react-native';
+import { View , StyleSheet , Image , Text , TouchableWithoutFeedback } from 'react-native';
 
 const SplashScreen = props => {
     return  (
     <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Onboarding')}>
-    <View style={styles.screen} >
-        <View style={styles.centered}>
-            <View style={styles.firstBlock} >               
-                <Image style={styles.logo} source={require('../../assets/images/Group.png')} />
-            </View>
-            <View style={styles.secondBlock} >
-                <View style={styles.titleBlock}>
-                    <Image style={styles.title} source={require('../../assets/images/title.png')} />
+        <View style={styles.screen} >
+            <View style={styles.centered}>
+                <View style={styles.logoBlock} >               
+                    <Image style={styles.logo} source={require('../../assets/images/Group.png')} />
                 </View>
-                <View style={styles.smallTextBlock}>
-                <Text style={styles.smallText}>online groceriet</Text>
+                <View style={styles.secondBlock} >
+                    <View style={styles.titleBlock}>
+                        <Image style={styles.title} source={require('../../assets/images/title.png')} />
+                    </View>
+                    <View style={styles.smallTextBlock}>
+                        <Text style={styles.smallText}>online groceriet</Text>
+                    </View>
                 </View>
             </View>
-        </View>
-    </View> 
-    </TouchableWithoutFeedback> );
+        </View> 
+    </TouchableWithoutFeedback> 
+    );
 }
 
 SplashScreen.navigationOptions = {
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         flexDirection : 'row',
         justifyContent : 'space-between'
     },
-    firstBlock : {
+    logoBlock : {
         width : '15%',
         marginBottom : 15,
         

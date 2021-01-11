@@ -1,23 +1,24 @@
 import React from 'react';
-import { TouchableOpacity,Text, View,StyleSheet,Image, ImageBackground } from 'react-native';
-import CustomButton from '../../components/CustomButton';
+import { Text, View , StyleSheet , Image , ImageBackground } from 'react-native';
+import CustomButton from '../../src/components/CustomButton';
 
 const OnboardingScreen = props => {
-    return  <View style={styles.screen} >
+    return  (
+    <View style={styles.screen} >
         <ImageBackground style={styles.image} source={require('../../assets/images/background.png')} >
-        
-        <View style={styles.secondHalf}>
-        <Image style={styles.logo} source={require('../../assets/images/Group.png')} />
-        <View style={styles.welcometextBlock} >
-            <Text style={styles.welcomeText} >Welcome to our Store</Text>
-        </View>
-        <View style={styles.smalltextBlock} >
-            <Text style={styles.smallText}>Ger your groceries in as fast as one hour</Text>
-        </View>
-        <CustomButton label="Get Started" style={styles.button} onPress={() => props.navigation.navigate('Signin')}/>
-        </View>
+            <View style={styles.secondHalf}>
+                <Image style={styles.logo} source={require('../../assets/images/Group.png')} />
+                <View style={styles.welcometextBlock} >
+                    <Text style={styles.welcomeText} >Welcome to our Store</Text>
+                </View>
+                <View style={styles.smalltextBlock} >
+                    <Text style={styles.smallText}>Ger your groceries in as fast as one hour</Text>
+                </View>
+                <CustomButton label="Get Started" style={styles.button} onPress={() => props.navigation.navigate('Signin')}/>
+            </View>
         </ImageBackground>
-    </View> ;
+    </View>
+    );
 }
 
 OnboardingScreen.navigationOptions = {
@@ -26,14 +27,12 @@ OnboardingScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
     screen : {
-        flex: 1,
-        
+        flex: 1
     },
     image: {
         flex: 1,
         width : '100%',
         height : '100%'
-        
     },
     secondHalf : {
         flex : 1,
@@ -47,8 +46,7 @@ const styles = StyleSheet.create({
     welcometextBlock : {
         marginTop : 10,
         height : 86,
-        width : '80%',
-       
+        width : '80%'
     },
     welcomeText : {
         fontFamily : 'Gilroy-Medium',
@@ -60,20 +58,17 @@ const styles = StyleSheet.create({
     smalltextBlock : {
         marginTop : 20,
         height : '5%',
-        width : '90%',
-     
+        width : '90%'
     },
     smallText : {
         fontFamily : 'Gilroy-Medium',
         fontSize : 16,
         textAlign : 'center',
-        color : '#FFFFFF',
-
+        color : '#FFFFFF'
     },
     button : {
         marginVertical : 40
-    },
-    
+    }
 });
 
 export default OnboardingScreen;

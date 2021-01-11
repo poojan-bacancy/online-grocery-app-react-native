@@ -2,7 +2,7 @@ import React  from 'react';
 import { TouchableOpacity,View,StyleSheet,Text,Image,ScrollView } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import RNPickerSelect from 'react-native-picker-select';
-import CustomButton from '../../components/CustomButton';
+import CustomButton from '../../src/components/CustomButton';
 
 const SelectLocationScreen = props => {
 

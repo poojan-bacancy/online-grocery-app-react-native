@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput,Image, TouchableOpacity ,View,Text,StyleSheet} from 'react-native';
-import CustomButton from '../../components/CustomButton';
+import CustomButton from '../../src/components/CustomButton';
 
 const SignUpScreen = props => {
     return (

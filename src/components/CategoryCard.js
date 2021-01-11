@@ -5,7 +5,7 @@ const CategoryCard = ({category}) => {
   return (
         <View style={{ ...styles.backgroundStyle , ...{backgroundColor : category.bgColor , borderColor : category.bdColor} }} >
             <View style={styles.imageBlock}>
-                <Image style={styles.image} source={require('../assets/images/vegetable.png')} />
+                <Image style={styles.image} source={require('../../assets/images/vegetable.png')} />
             </View>
             <View style={styles.titleBlock}>
                 <View style={styles.title}><Text style={styles.titleText}>{category.label}</Text></View>

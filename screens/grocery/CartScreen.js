@@ -1,9 +1,13 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { View , Text,ScrollView , StyleSheet} from 'react-native';
-import CartItem from '../../components/CartItem';
-import CustomButton from '../../components/CustomButton';
+import CartItem from '../../src/components/CartItem';
+import CustomButton from '../../src/components/CustomButton';
+import PlaceOrderModal from '../../src/components/PlaceOrderModal';
 
 const CartScreen = () => {
+
+    const [isModalOpen,setIsModalOpen] = useState(false);
+
     return (
         <View style={styles.screen}>
             <ScrollView >
@@ -12,9 +16,13 @@ const CartScreen = () => {
             <CartItem />
             <CartItem />
             </ScrollView>
-            <CustomButton style={styles.button} label="Go to Checkout" >
+            <CustomButton style={styles.button} label="Go to Checkout" onPress = {() => setIsModalOpen(true)} >
                 <View style={styles.amountBlock}><Text style={styles.amount}>$12.96</Text></View>
             </CustomButton>
+            <PlaceOrderModal 
+                visible={isModalOpen} 
+                closeModal = { () => setIsModalOpen(false)}
+            />
         </View>
     );
 }
@@ -22,7 +30,7 @@ const CartScreen = () => {
 const styles = StyleSheet.create({  
     screen : {
         flex : 1,
-        marginHorizontal : 8
+        marginHorizontal : 8,
     },
     button : {
         flexDirection : 'row-reverse' ,
