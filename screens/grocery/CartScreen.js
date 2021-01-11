@@ -3,10 +3,15 @@ import { View , Text,ScrollView , StyleSheet} from 'react-native';
 import CartItem from '../../src/components/CartItem';
 import CustomButton from '../../src/components/CustomButton';
 import PlaceOrderModal from '../../src/components/PlaceOrderModal';
+import OrderAcceptedModal from '../../src/components/OrderAcceptedModal';
+import OrderFailedModal from '../../src/components/OrderFailedModal';
 
-const CartScreen = () => {
+
+const CartScreen = props => {
 
     const [isModalOpen,setIsModalOpen] = useState(false);
+    const [ isOrderAcceped , setIsOrderAccepted ] = useState(false);
+    const [ isErrorInOrder , setIsErrorInOrder ] = useState(false);
 
     return (
         <View style={styles.screen}>
@@ -22,6 +27,26 @@ const CartScreen = () => {
             <PlaceOrderModal 
                 visible={isModalOpen} 
                 closeModal = { () => setIsModalOpen(false)}
+                placeOrder = { () => {
+                    setIsModalOpen(false);
+                    //setIsOrderAccepted(true);
+                    setIsErrorInOrder(true);
+                }}
+            />
+            <OrderAcceptedModal
+                visible = {isOrderAcceped}
+                back = { () => {
+                    setIsOrderAccepted(false);
+                    props.navigation.navigate('Shop');
+                }}
+            />
+            <OrderFailedModal 
+                visible = {isErrorInOrder}
+                closeModal = { () => setIsErrorInOrder(false) }
+                back = { () => {
+                    setIsErrorInOrder(false);
+                    props.navigation.navigate('Shop');
+                }}
             />
         </View>
     );

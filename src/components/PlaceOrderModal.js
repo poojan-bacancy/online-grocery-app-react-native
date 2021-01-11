@@ -49,7 +49,7 @@ const PlaceOrderModal = props => {
                         <Text numberOfLines={2} style={styles.termsAndConditionText}>By placing an order you agree to our <Text style={{color : 'black'}}>Terms</Text> And <Text style={{color : 'black'}}>Conditions</Text></Text>
                     </View>
                     <View style={styles.buttonBlock}>
-                        <CustomButton label="Place Order" />
+                        <CustomButton label="Place Order" onPress={props.placeOrder} />
                     </View>
                 </View>
             </View>
@@ -67,14 +67,16 @@ const styles = StyleSheet.create({
         backgroundColor : '#ffffff' , 
         width : '100%' , 
         borderTopLeftRadius : 30 , 
-        borderTopRightRadius : 30
+        borderTopRightRadius : 30,
+        paddingHorizontal : 15
     },
     modalBoxHeader : {
         alignItems : 'center', 
         flexDirection : 'row' , 
         justifyContent : 'space-between' , 
-        paddingHorizontal : 18 , 
-        paddingVertical : 20  
+        paddingVertical : 20 ,
+        borderBottomColor : '#E2E2E2',
+        borderBottomWidth : 1, 
     },
     modalBoxHeaderTitle : { 
         fontFamily : 'Gilroy-Medium' , 
@@ -86,11 +88,8 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         justifyContent : 'space-between',
         borderBottomColor : '#E2E2E2',
-        borderTopColor : '#E2E2E2',
-        borderTopWidth : 1,
         borderBottomWidth : 1 , 
-        paddingHorizontal : 15 , 
-        paddingVertical : 15
+        paddingVertical : 18
     },
     modalItemLabel : {
         fontFamily : 'Gilroy-Medium' , 
@@ -111,8 +110,7 @@ const styles = StyleSheet.create({
     },
     termsAndCondition : {
         width : '60%' , 
-        marginTop : 15  , 
-        marginHorizontal : 15
+        marginTop : 15
     },
     termsAndConditionText : {
         fontFamily : 'Gilroy-Medium',
