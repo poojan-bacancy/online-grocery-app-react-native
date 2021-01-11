@@ -4,7 +4,6 @@ import ProductCard from '../../src/components/ProductCard';
 import { HeaderButtons , Item} from 'react-navigation-header-buttons';
 import  HeaderButton from '../../src/components/HeaderButton';
 import FontAwesome  from 'react-native-vector-icons/FontAwesome';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const data = [
     {
@@ -79,17 +78,19 @@ const ExploreCategoriesDetailScreen = props => {
     );
 }
 
-ExploreCategoriesDetailScreen.navigationOptions = {
-    headerTitle : 'Category',
+ExploreCategoriesDetailScreen.navigationOptions = navData => {
+    return {
     headerRight : () => 
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item 
+            iconSize = {23} 
             IconComponent = {FontAwesome}
             title="Filter" 
             iconName = 'sliders'
-            onPress={()=>{}} 
+            onPress={() => navData.navigation.navigate('Filters') } 
         />
         </HeaderButtons> 
+    };
 }
 
 const styles = StyleSheet.create({
