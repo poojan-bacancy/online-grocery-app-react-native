@@ -1,6 +1,7 @@
 import React , {useState} from 'react';
 import { TextInput,TouchableWithoutFeedback,KeyboardAvoidingView,Keyboard,TouchableOpacity,View,StyleSheet,Text } from 'react-native';
 import CustomButton from '../../src/components/CustomButton';
+import Dimensions from '../../constants/Dimensions';
 
 const VerificationScreen = props => {
 
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     inputBlock : {
         flexDirection : 'row',
         alignItems : 'center',
-        height : 40,     
+        height : Dimensions.height * 50,     
         marginHorizontal : 18,
         borderBottomColor : '#888' , 
         borderBottomWidth : 1
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
     },
     button :{
         marginHorizontal : 0,
-        height : 62 , 
-        width : 63,
+        height : Dimensions.height * 75 , 
+        width : Dimensions.width * 73 ,
         marginBottom : 15,
         borderRadius : 70 , 
         backgroundColor : '#53B175', 

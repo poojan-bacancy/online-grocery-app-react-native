@@ -17,21 +17,36 @@ const CheckBoxItem = props => {
 }
 
 const FiltersScreen = () => {
+    var categories = [ 'Eggs' , 'Noodles & Pasta' , 'Chips & Crisps' , 'Fast Food' ];
+    var brands = [ 'Individual Callection' , 'Cocola' , 'Ifad' , 'kazi Farmas' ]
+    
+    var catItems = [];
+    for ( let i=0 ; i < 4 ; i++){
+        catItems.push(
+            <View key={i}>
+                <CheckBoxItem name = {categories[i]} />
+            </View>
+        )
+    }
+
+    var brandItems = [];
+    for ( let i=0 ; i < 4 ; i++){
+        brandItems.push(
+            <View key={i}>
+                <CheckBoxItem name = {brands[i]} />
+            </View>
+        )
+    }
+
     return (
         <View style={styles.screen}>
             <View style={styles.selctionBlock}>
                 <Text style={styles.selctionLabel}>Categories</Text>
-                <CheckBoxItem name="Eggs" />
-                <CheckBoxItem name="Noodles & Pasta" />
-                <CheckBoxItem name="Chips & Crisps" />
-                <CheckBoxItem name="Fast Food" />
+                {catItems}
             </View>
             <View style={styles.selctionBlock}>
                 <Text style={styles.selctionLabel}>Brands</Text>
-                <CheckBoxItem name="Individual Callection" />
-                <CheckBoxItem name="Cocola" />
-                <CheckBoxItem name="Ifad" />
-                <CheckBoxItem name="Kazi Farmas" />
+                { brandItems }
             </View>
             <View style={styles.buttonBlock}>
                 <CustomButton label="Apply Filter" />

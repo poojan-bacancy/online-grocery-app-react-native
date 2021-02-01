@@ -3,6 +3,7 @@ import { TextInput , KeyboardAvoidingView , TouchableWithoutFeedback , View , St
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Flag from 'react-native-flags';
 import CustomButton from '../../src/components/CustomButton';
+import Dimensions from '../../constants/Dimensions';
 
 const Input = (props) => {
     return(
@@ -116,16 +117,16 @@ const styles = StyleSheet.create({
     },
     titleBlock : { 
         alignSelf : 'flex-start',
-        marginVertical : 15,
+        marginTop : 15,
         marginLeft : 15 , 
         height : '12%' , 
-        width : '60%' 
+        width : '70%' 
     },
     inputBlock : {
         marginTop : 10,
         flexDirection : 'row',
         alignItems : 'center',
-        height : 40 , 
+        height : Dimensions.height * 50 , 
         marginHorizontal : 18,
         borderBottomColor : '#888' , 
         borderBottomWidth : 1
@@ -135,8 +136,8 @@ const styles = StyleSheet.create({
         marginLeft : 8,
     },
     smallTextblock :{
-        height : '5%' , 
-        marginTop  : 5, 
+        height : '5%',  
+        marginTop : 15,
         marginHorizontal : 18 , 
         alignSelf : 'center'
     },
@@ -180,8 +181,8 @@ const styles = StyleSheet.create({
         alignItems : 'flex-end'
     },
     button :{
-        height : 62 , 
-        width : 63,
+        height : Dimensions.height * 75 , 
+        width : Dimensions.width * 73,
         marginBottom : 15,
         borderRadius : 70 , 
         backgroundColor : '#53B175' 

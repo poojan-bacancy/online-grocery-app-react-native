@@ -1,6 +1,7 @@
 import React from "react";
 import { TextInput, StyleSheet , View} from "react-native";
 import Feather from 'react-native-vector-icons/Feather';
+import Dimensions from '../../constants/Dimensions'
 
 const SearchBar = props => {
   return (
@@ -21,8 +22,9 @@ const styles = StyleSheet.create({
  backgroundStyle : {
     backgroundColor : '#ccc',
     flexDirection:'row',
-    height : 50,
-    marginVertical : 20 , 
+    height : Dimensions.height * 60,
+    marginTop : 15 ,
+    marginBottom : 10, 
     borderRadius : 20
  },
  inputStyle : {

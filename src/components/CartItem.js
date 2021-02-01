@@ -2,7 +2,7 @@ import React from 'react';
 import { View , Image, Text , TouchableOpacity,StyleSheet} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import CustomButton from './CustomButton';
-
+import Dimensions from '../../constants/Dimensions'
 const CartItem =  props  => {
     return (
         <View style={styles.backgroundStyle}>
@@ -40,7 +40,7 @@ const CartItem =  props  => {
 
 const styles = StyleSheet.create({
     backgroundStyle : {
-        height : 180 ,
+        height : Dimensions.height * 200,
         paddingHorizontal : 15,
         paddingVertical : 30,
         borderBottomColor : '#E2E2E2',
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
         marginRight : 5
     },
     image : {
-        height : 64,
-        width : 70,
+        height : Dimensions.height * 74,
+        width : Dimensions.height * 80,
        
     },
     secondBlock : {
@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
         backgroundColor : 'white' ,
         borderColor : '#B3B3B3',
         borderWidth: 0.5,
-        width : 40 , 
-        height : 40,
+        width : Dimensions.height * 45 , 
+        height : Dimensions.width * 45,
         marginHorizontal : 10,
         borderRadius : 17
     },

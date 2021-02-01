@@ -1,7 +1,7 @@
 import React from 'react';
 import { View ,Text , Image, TouchableOpacity , StyleSheet , Modal } from 'react-native';
 import CustomButton from './CustomButton';
-
+import Dimensions from '../../constants/Dimensions';
 
 const OrderAcceptedModal = props => {
     return (
@@ -45,10 +45,10 @@ const styles = StyleSheet.create({
         flex : 1,
         alignItems : 'center',
         justifyContent : 'flex-end',
-        paddingTop : 300,
+        paddingTop : Dimensions.height * 310,
     },
     logoBlock : {
-        height : 240,
+        height : Dimensions.height * 255,
         marginLeft : 55,
         marginRight : 95,
         marginVertical : 30

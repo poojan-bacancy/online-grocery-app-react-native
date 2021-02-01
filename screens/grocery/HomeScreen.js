@@ -4,6 +4,7 @@ import SearchBar from '../../src/components/SearchBar';
 import Entypo from 'react-native-vector-icons/Entypo';
 import ProductList from '../../src/components/ProductList';
 import {FlatListSlider} from 'react-native-flatlist-slider';
+import Dimensions from "../../constants/Dimensions";
 
 const images = [
     {
@@ -34,7 +35,7 @@ const HomeScreen = props => {
            <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles.imageSlider}>
                 <FlatListSlider 
-                    height = {110}
+                    height = {Dimensions.height * 125}
                     data = {images}
                     imageKey={'image'}
                     local
@@ -68,12 +69,12 @@ const styles = StyleSheet.create({
     imageBlock : {
         justifyContent : 'center',
         alignItems : 'center',
-        height : 40,
+        height : Dimensions.height * 60,
         marginTop : 20
     },
     image : {
-        height : 30,
-        width : 26
+        height : Dimensions.height * 40,
+        width : Dimensions.width * 36
     },
     location : {
         flexDirection : 'row',

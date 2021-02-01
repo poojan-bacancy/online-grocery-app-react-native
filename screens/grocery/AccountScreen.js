@@ -7,8 +7,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
-//shopping bag Feather
+import Dimensions from '../../constants/Dimensions'
 
 const AccountItem = props => {
     return <View style={styles.accItem}>
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
         borderTopColor : '#E2E2E2',
         borderTopWidth : 1,
         borderBottomWidth : 1,
-        height : 60,
+        height : Dimensions.height * 70,
     },
     name_iconBlock : {
         marginHorizontal : 20,
@@ -116,8 +115,8 @@ const styles = StyleSheet.create({
     },
     image : {
         borderRadius : 27,
-        height : 60,
-        width : 60,
+        height : Dimensions.height * 70,
+        width : Dimensions.height * 70,
         marginHorizontal : 5,
         
     },

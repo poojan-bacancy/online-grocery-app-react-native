@@ -1,7 +1,7 @@
 import React from 'react';
 import { View , Image, Text , TouchableOpacity , StyleSheet} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import Dimensions from '../../constants/Dimensions'
 const FavouriteItem = () => {
     return (
         <View style={styles.backgroundStyle}>
@@ -26,7 +26,7 @@ const FavouriteItem = () => {
 
 const styles = StyleSheet.create({
     backgroundStyle : {
-        height : 110 ,
+        height : Dimensions.height * 125 ,
         paddingHorizontal : 15,
         paddingVertical : 10,
         borderBottomColor : '#E2E2E2',
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
         
     },
     image : {
-        height : 60,
-        width : 35,
+        height : Dimensions.height * 70,
+        width : Dimensions.width * 35,
         marginHorizontal : 5,
        
     },

@@ -5,6 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Entypo from 'react-native-vector-icons/Entypo';
 import CustomButton from '../../src/components/CustomButton';
 import {FlatListSlider} from 'react-native-flatlist-slider';
+import Dimensions from "../../constants/Dimensions";
 
 const images = [
     {
@@ -35,7 +36,7 @@ const ProductDetailScreen = props => {
             </View>
             <FlatListSlider 
                 autoscroll = {false}
-                height = {180}
+                height = {Dimensions.height * 205}
                 data = {images}
                 imageKey={'image'}
                 local
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     imageSlider : {
         borderColor : 'black',
         borderWidth : 1,
-        height : 270,
+        height : Dimensions.height * 280,
         justifyContent : 'center',
         alignItems : 'center'
     },  
@@ -129,7 +130,7 @@ const styles = StyleSheet.create({
         alignItems : 'center'
     },
     backgroundStyle : {
-        height : 140 ,
+        height : Dimensions.height * 150 ,
         paddingHorizontal : 10,
         borderBottomColor : '#E2E2E2',
         borderTopColor : '#E2E2E2',
@@ -188,8 +189,8 @@ const styles = StyleSheet.create({
         backgroundColor : 'white' ,
         borderColor : '#B3B3B3',
         borderWidth: 0.5,
-        width : 40 , 
-        height : 40,
+        width : Dimensions.height * 45 , 
+        height : Dimensions.width * 45,
         marginHorizontal : 10,
         borderRadius : 17
     },
@@ -207,7 +208,7 @@ const styles = StyleSheet.create({
         color : '#7C7C7C'
     },
     detailBlock : {
-        height : 125 ,
+        height : Dimensions.height * 135 ,
         paddingHorizontal : 10,
         paddingVertical : 10,
         borderBottomColor : '#E2E2E2',
@@ -245,7 +246,7 @@ const styles = StyleSheet.create({
         borderTopColor : '#E2E2E2',
         borderTopWidth : 1,
         borderBottomWidth : 1,
-        height : 60,
+        height : Dimensions.height * 70,
     },
     ingredientsLabel : {
         marginHorizontal : 20

@@ -13,13 +13,20 @@ const CartScreen = props => {
     const [ isOrderAcceped , setIsOrderAccepted ] = useState(false);
     const [ isErrorInOrder , setIsErrorInOrder ] = useState(false);
 
+    var cartItems = [];
+    for ( let i=0 ; i < 5 ; i++){
+        cartItems.push(
+            <View key={i}>
+                <CartItem />
+            </View>
+            
+        )
+    }
+
     return (
         <View style={styles.screen}>
             <ScrollView >
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            { cartItems }
             </ScrollView>
             <CustomButton style={styles.button} label="Go to Checkout" onPress = {() => setIsModalOpen(true)} >
                 <View style={styles.amountBlock}><Text style={styles.amount}>$12.96</Text></View>

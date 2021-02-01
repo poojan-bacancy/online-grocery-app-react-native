@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     screen : {
         alignItems : 'center',
         flex : 1,
-        marginHorizontal : 12
+        marginHorizontal : 15
     },
     list : {
         marginVertical : 5

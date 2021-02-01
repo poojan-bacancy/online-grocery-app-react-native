@@ -4,17 +4,20 @@ import FavouriteItem from '../../src/components/FavouriteItem';
 import CustomButton from '../../src/components/CustomButton';
 
 const FavouritesScreen = () => {
+
+    var favItems = [];
+    for ( let i=0 ; i < 10 ; i++){
+        favItems.push(
+            <View key={i}>
+                <FavouriteItem />
+            </View>       
+        )
+    }
+
     return (
         <View style={styles.screen}>
             <ScrollView>
-                <FavouriteItem />
-                <FavouriteItem />
-                <FavouriteItem />
-                <FavouriteItem />
-                <FavouriteItem />
-                <FavouriteItem />
-                <FavouriteItem />
-                <FavouriteItem />
+                { favItems }
             </ScrollView>
             <CustomButton style={styles.button} label="Add all to cart" />
         </View>

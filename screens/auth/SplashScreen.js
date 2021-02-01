@@ -1,9 +1,14 @@
 import React from 'react';
-import { View , StyleSheet , Image , Text , TouchableWithoutFeedback } from 'react-native';
+import { View , StyleSheet , Image , Text  } from 'react-native';
+import Dimensions from '../../constants/Dimensions';
 
 const SplashScreen = props => {
+
+    setTimeout(() => {
+        props.navigation.navigate('Onboarding');
+    }, 2500);
+
     return  (
-    <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Onboarding')}>
         <View style={styles.screen} >
             <View style={styles.centered}>
                 <View style={styles.logoBlock} >               
@@ -18,8 +23,7 @@ const SplashScreen = props => {
                     </View>
                 </View>
             </View>
-        </View> 
-    </TouchableWithoutFeedback> 
+        </View>  
     );
 }
 
@@ -43,7 +47,6 @@ const styles = StyleSheet.create({
     logoBlock : {
         width : '15%',
         marginBottom : 15,
-        
         marginLeft : 5
     },
     secondBlock : {
@@ -55,15 +58,14 @@ const styles = StyleSheet.create({
         height : '50%'
     },
     title : {
-        height : 46,
-        width : 194,
+        height : Dimensions.height * 56,
+        width : Dimensions.width * 225
     },    
     smallTextBlock:{
         height : '25%',
         width : '100%',
         marginTop : 5,
-        alignItems : 'center',
-        
+        alignItems : 'center'  
     },
     smallText  :{
         fontSize : 15,
@@ -74,8 +76,8 @@ const styles = StyleSheet.create({
     },
     logo : {
         marginTop :5,
-        height : 64,
-        width : 54
+        height : Dimensions.height * 74,
+        width : Dimensions.width * 64
     }
 });
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Text,Image, StyleSheet , View} from "react-native";
+import Dimensions from '../../constants/Dimensions'
 
 const CategoryCard = ({category}) => {
   return (
@@ -17,8 +18,8 @@ const CategoryCard = ({category}) => {
 const styles = StyleSheet.create({
     backgroundStyle : {
         paddingHorizontal: 10,
-        height : 190,
-        width : 158,
+        height : Dimensions.height * 210,
+        width : Dimensions.width *175,
         borderRadius : 18,
         backgroundColor : 'rgba(83, 177, 117, 0.1)', 
         margin : 5,
@@ -32,8 +33,8 @@ const styles = StyleSheet.create({
         justifyContent : 'center'
     },
     image : {
-        width : 100,
-        height : 74
+        width : Dimensions.width * 110,
+        height : Dimensions.height * 90
     },
     titleBlock : {
         padding : 10,

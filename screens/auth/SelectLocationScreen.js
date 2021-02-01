@@ -1,13 +1,12 @@
 import React  from 'react';
-import { TouchableOpacity,View,StyleSheet,Text,Image,ScrollView } from 'react-native';
-import DropDownPicker from 'react-native-dropdown-picker';
+import { View,StyleSheet,Text,Image } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import CustomButton from '../../src/components/CustomButton';
+import Dimensions from '../../constants/Dimensions';
 
 const SelectLocationScreen = props => {
 
-    return(
-       
+    return(       
         <View style={styles.screen}>
             <View style={styles.imageBlock}>
                 <Image style={styles.image} source={require('../../assets/images/illustration.png')} />
@@ -21,56 +20,28 @@ const SelectLocationScreen = props => {
             <View style={styles.selectionBlock}>
                 <View style={styles.attributeBlock}>
                     <Text style={styles.attributeTitle}>Your Zone</Text>
-                    {/* <DropDownPicker
-                        placeholder='Select your Zone'
-                        items={[
-                            {label: 'USA', value: 'usa'},
-                            {label: 'UK', value: 'uk'},
-                            {label: 'France', value: 'france'},
-                        ]}
-                        containerStyle={{height: 40}}
-                        style={{marginTop : 5}}
-                        itemStyle={{
-                            justifyContent: 'flex-start'
-                        }}
-                        dropDownStyle={{backgroundColor: '#fafafa'}}
-                    /> */}
                     <View style={{borderBottomColor : '#888' , borderBottomWidth : 1}}>
-                    <RNPickerSelect
-                        placeholder = {{ 
-                            label: 'Select your zone', 
-                            value: null, 
-                        }}
-                        onValueChange={(value) => console.log(value)}
-                        items={[
-                            { label: 'Football', value: 'football' },
-                            { label: 'Baseball', value: 'baseball' },
-                            { label: 'Hockey', value: 'hockey' },
-                        ]}
-                    />
+                        <RNPickerSelect
+                            placeholder = {{ 
+                                label: 'Select your zone', 
+                                value: null, 
+                            }}
+                            onValueChange={(value) => console.log(value)}
+                            items={[
+                                { label: 'Football', value: 'football' },
+                                { label: 'Baseball', value: 'baseball' },
+                                { label: 'Hockey', value: 'hockey' },
+                            ]}
+                        />
                     </View>
                 </View>
                 <View style={styles.attributeBlock}>
                     <Text style={styles.attributeTitle}>Your Area</Text>
-                    {/* <DropDownPicker
-                        placeholder='Select your Area'
-                        items={[
-                            {label: 'USA', value: 'usa'},
-                            {label: 'UK', value: 'uk'},
-                            {label: 'France', value: 'france'},
-                        ]}
-                        containerStyle={{ height: 40}}
-                        style={{marginTop : 5}}
-                        itemStyle={{
-                            justifyContent: 'flex-start'
-                        }}
-                        dropDownStyle={{backgroundColor: '#fafafa'}}
-                    /> */}
                     <View style={{borderBottomColor : '#888' , borderBottomWidth : 1}}>
-                    <RNPickerSelect
-                        placeholder = {{ 
+                        <RNPickerSelect
+                            placeholder = {{ 
                             label: 'Select your area', 
-                            value: null, 
+                        value: null, 
                         }}
                         onValueChange={(value) => console.log(value)}
                         items={[
@@ -78,19 +49,14 @@ const SelectLocationScreen = props => {
                             { label: 'Baseball', value: 'baseball' },
                             { label: 'Hockey', value: 'hockey' },
                         ]}
-                    />
+                        />
                     </View>
                 </View>
                 <View style={{alignItems : 'center'}}>
-                <CustomButton label="Submit" style={styles.button} onPress={() => props.navigation.navigate('LogIn')}/>
-                </View>
-                
-                {/* <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('LogIn')} >
-                    <Text style={styles.buttonText}>Submit</Text>    
-                </TouchableOpacity> */}
+                    <CustomButton label="Submit" style={styles.button} onPress={() => props.navigation.navigate('LogIn')}/>
+                </View>    
             </View>
         </View>
-        
     );
 };
 
@@ -109,8 +75,8 @@ const styles = StyleSheet.create({
         alignItems : 'center'
     },
     image:{
-        width : 224,
-        height : 170
+        width : Dimensions.width * 234,
+        height : Dimensions.height * 190
     },
     headerBlock : {
         marginTop : 20,
@@ -141,17 +107,14 @@ const styles = StyleSheet.create({
         fontFamily : 'Gilroy-Medium',
         fontWeight: '600',
         fontSize : 16,
-        color : '#707070',
-        
+        color : '#707070'   
     },
     button : { 
         marginTop : 40 , 
         marginHorizontal : 22 , 
         borderRadius : 40 , 
-        backgroundColor : '#53B175', 
-        
-    },
-    
+        backgroundColor : '#53B175'
+    }
 });
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity,Text,StyleSheet} from 'react-native';
-
+import Dimensions from '../../constants/Dimensions'
 const CustomButton = props => {
     return(
         <TouchableOpacity 
@@ -15,7 +15,7 @@ const CustomButton = props => {
 
 const styles = StyleSheet.create({
     button : {
-        height : 67,
+        height : Dimensions.height * 77,
         width : '80%', 
         marginVertical: 10 , 
         marginHorizontal : 22 , 

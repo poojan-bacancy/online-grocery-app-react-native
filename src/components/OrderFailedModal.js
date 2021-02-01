@@ -2,6 +2,7 @@ import React from 'react';
 import { View ,Text , Image , TouchableOpacity , StyleSheet , Modal } from 'react-native';
 import CustomButton from './CustomButton';
 import Entypo from 'react-native-vector-icons/Entypo';
+import Dimensions from '../../constants/Dimensions';
 
 const OrderFailedModal = props => {
     return (
@@ -50,8 +51,8 @@ const styles = StyleSheet.create({
         paddingVertical : 10
     },
     logo : {
-        height : 200,
-        width : 200
+        height : Dimensions.height * 220,
+        width : Dimensions.width * 210
     }, 
     logoBlock : {
         alignItems : 'center'

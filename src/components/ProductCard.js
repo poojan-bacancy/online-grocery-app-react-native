@@ -2,6 +2,7 @@ import React from "react";
 import { Text,Image, StyleSheet , View} from "react-native";
 import CustomButton from "./CustomButton";
 import Entypo from 'react-native-vector-icons/Entypo';
+import Dimensions from '../../constants/Dimensions';
 
 const ProductCard = ({prod}) => {
   return (
@@ -32,8 +33,8 @@ const ProductCard = ({prod}) => {
 const styles = StyleSheet.create({
     backgroundStyle : {
         paddingHorizontal: 10,
-        height : 240,
-        width : 162,
+        height : Dimensions.height * 265,
+        width : Dimensions.width * 175,
         borderRadius : 18,
         backgroundColor : 'white', 
         marginRight : 8,
@@ -76,9 +77,9 @@ const styles = StyleSheet.create({
         fontWeight : '600' 
     },
     button :{
-        height : 45,
-        width : 45,
-        borderRadius : 17,
+        height : Dimensions.height * 50,
+        width : Dimensions.width * 50,
+        borderRadius : 18,
         marginHorizontal : 0   
     },
     buttonSymbol : {

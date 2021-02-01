@@ -2,6 +2,7 @@ import React from "react";
 import { TouchableOpacity,FlatList, StyleSheet , View} from "react-native";
 import { withNavigation } from 'react-navigation';
 import CategoryCard from './CategoryCard';
+import Dimensions from '../../constants/Dimensions';
 
 const data = [
     {
@@ -76,9 +77,9 @@ const CategoryList = props => {
 }
 
 const styles = StyleSheet.create({
-    list : {
-        marginVertical : 10
-    }
+   list : {
+       marginBottom : Dimensions.height * 90
+   }
 
 });
 

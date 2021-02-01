@@ -1,10 +1,12 @@
 import React from 'react';
-import {TextInput,Image, TouchableOpacity ,View,Text,StyleSheet} from 'react-native';
+import {TextInput,Image, TouchableOpacity , ScrollView , KeyboardAvoidingView ,View,Text,StyleSheet} from 'react-native';
 import CustomButton from '../../src/components/CustomButton';
+import Dimensions from '../../constants/Dimensions';
 
 const SignUpScreen = props => {
     return (
-        <View style={styles.screen}>
+        <KeyboardAvoidingView style={styles.screen} behavior="height" keyboardVerticalOffset = { 40 }>
+            <ScrollView>
             <View style={styles.imageBlock}>
                 <Image style={styles.image} source={require('../../assets/images/Group-color.png')}/>
             </View>
@@ -37,11 +39,11 @@ const SignUpScreen = props => {
                 <CustomButton label="Sign Up" onPress={() => props.navigation.navigate('Grocery')} style={styles.button}/>
             </View>
 
-
             <View style={styles.askSignUpText}>
                 <Text>Already have an account? </Text><TouchableOpacity onPress={() => props.navigation.navigate('LogIn')}><Text style={styles.pressableText}>SignIn</Text></TouchableOpacity>
             </View>
-        </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
     );
 }
 
@@ -59,8 +61,8 @@ const styles = StyleSheet.create({
         height : 170
     },
     image : {
-        height : 55,
-        width : 47
+        height : Dimensions.height * 65,
+        width : Dimensions.width * 57
     },
     headerBlock : {
         marginTop : 30 , 
